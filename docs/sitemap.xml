@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/101_processor/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/102_riscv/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/103_picorv/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/104_crosscomp/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/105_simulation/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/106_exercises/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/201_coprocessor/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/202_pcpi/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/203_coproccesor_hd/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/204_exercises/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/301_busarchs/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/302_counter/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/303_soc/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/304_exercises/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/401_interrupt/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/402_handling/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/403_example/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/404_exercises/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/501_ascon/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/502_profiling/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/503_project/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/900_appendices/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/900_appendices/901_roger/</loc>
+    <lastmod>2023-04-24T09:48:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/</loc>
+    <lastmod>2023-04-24T09:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/tags/</loc>
+  </url>
+  
+</urlset>

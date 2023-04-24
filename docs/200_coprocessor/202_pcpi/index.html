@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="../../images/favicon.png" type="image/png">
+
+    <title>202 - Pico CoProcessor Interface (PCPI) :: HW/SW codesign</title>
+
+    
+    <link href="../../css/nucleus.css?1682322548" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1682322548" rel="stylesheet">
+    <link href="../../css/hybrid.css?1682322548" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1682322548" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1682322548" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1682322548" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1682322548" rel="stylesheet">
+    <link href="../../css/theme.css?1682322548" rel="stylesheet">
+    <link href="../../css/tabs.css?1682322548" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1682322548" rel="stylesheet">
+    
+    <link href="../../css/theme-kul.css?1682322548" rel="stylesheet">
+    
+    
+
+    <script src="../../js/jquery-3.3.1.min.js?1682322548"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src=../../js/exercises.js></script> 
+  </head>
+  <body class="" data-url="/200_coprocessor/202_pcpi/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="https://www.kuleuven.be/kuleuven/" target="_blank">
+  <img src="../../img/style/kul.png" alt="KU Leuven" /><br/>
+</a>
+<a href="https://www.uhasselt.be/" target="_blank">
+  <img src="../../img/style/uhasselt.svg" alt="UHasselt" id="uhlogo" />
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js?1682322548"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1682322548"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/kuleuven-diepenbeek.github.io\/course_hwswcodesign\/";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js?1682322548"></script>
+
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/100_processor/" title="1 Processor" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../100_processor/">
+          1 Processor
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/101_processor/" title="101 - Processor" class="dd-item ">
+        <a href="../../100_processor/101_processor/">
+        101 - Processor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/102_riscv/" title="102 - RISC-V" class="dd-item ">
+        <a href="../../100_processor/102_riscv/">
+        102 - RISC-V
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/103_picorv/" title="103 - PicoRV32" class="dd-item ">
+        <a href="../../100_processor/103_picorv/">
+        103 - PicoRV32
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/104_crosscomp/" title="104 - Cross compiling" class="dd-item ">
+        <a href="../../100_processor/104_crosscomp/">
+        104 - Cross compiling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/105_simulation/" title="105 - Simulation" class="dd-item ">
+        <a href="../../100_processor/105_simulation/">
+        105 - Simulation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/106_exercises/" title="106 - Exercises" class="dd-item ">
+        <a href="../../100_processor/106_exercises/">
+        106 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/200_coprocessor/" title="2  Coprocessor" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="../../200_coprocessor/">
+          2  Coprocessor
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/201_coprocessor/" title="201 - Coprocessor" class="dd-item ">
+        <a href="../../200_coprocessor/201_coprocessor/">
+        201 - Coprocessor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/202_pcpi/" title="202 - Pico CoProcessor Interface (PCPI)" class="dd-item active">
+        <a href="../../200_coprocessor/202_pcpi/">
+        202 - Pico CoProcessor Interface (PCPI)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/203_coproccesor_hd/" title="203 - Coprocessor example" class="dd-item ">
+        <a href="../../200_coprocessor/203_coproccesor_hd/">
+        203 - Coprocessor example
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/204_exercises/" title="204 - Exercises" class="dd-item ">
+        <a href="../../200_coprocessor/204_exercises/">
+        204 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/300_soc/" title="3  System on Chip" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../300_soc/">
+          3  System on Chip
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/301_busarchs/" title="301 - Bus architectures" class="dd-item ">
+        <a href="../../300_soc/301_busarchs/">
+        301 - Bus architectures
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/302_counter/" title="302 - Counter peripheral" class="dd-item ">
+        <a href="../../300_soc/302_counter/">
+        302 - Counter peripheral
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/303_soc/" title="303 - System on Chip (SoC)" class="dd-item ">
+        <a href="../../300_soc/303_soc/">
+        303 - System on Chip (SoC)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/304_exercises/" title="304 - Exercises" class="dd-item ">
+        <a href="../../300_soc/304_exercises/">
+        304 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/400_interrupt/" title="4  Interrupt" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../400_interrupt/">
+          4  Interrupt
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/401_interrupt/" title="401 - Interrupt" class="dd-item ">
+        <a href="../../400_interrupt/401_interrupt/">
+        401 - Interrupt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/402_handling/" title="402 - Interrupt handling" class="dd-item ">
+        <a href="../../400_interrupt/402_handling/">
+        402 - Interrupt handling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/403_example/" title="403 - Example" class="dd-item ">
+        <a href="../../400_interrupt/403_example/">
+        403 - Example
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/404_exercises/" title="404 - Exercises" class="dd-item ">
+        <a href="../../400_interrupt/404_exercises/">
+        404 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/500_ascon/" title="5 ASCON" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../500_ascon/">
+          5 ASCON
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/500_ascon/501_ascon/" title="501 ASCON" class="dd-item ">
+        <a href="../../500_ascon/501_ascon/">
+        501 ASCON
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/500_ascon/502_profiling/" title="502 Profiling" class="dd-item ">
+        <a href="../../500_ascon/502_profiling/">
+        502 Profiling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/500_ascon/503_project/" title="503 ASCON project" class="dd-item ">
+        <a href="../../500_ascon/503_project/">
+        503 ASCON project
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/900_appendices/" title="9 Appendices" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../900_appendices/">
+          9 Appendices
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/900_appendices/901_roger/" title="901 - Roger" class="dd-item ">
+        <a href="../../900_appendices/901_roger/">
+        901 - Roger
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://uhintra03.uhasselt.be/studiegidswww/opleidingsonderdeel.aspx?a=2022&amp;i=3468&amp;n=4&amp;t=04"><i class='fa fa-university'></i> ECTS Sheet</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://p.cygnus.cc.kuleuven.be/webapps/blackboard/execute/announcement?method=search&amp;context=course&amp;course_id=_1128739_1"><i class='fa fa-university'></i> Toledo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../../'>HWSW codesign</a> > <a href='../../200_coprocessor/'>2  Coprocessor</a> > 202 - Pico CoProcessor Interface (PCPI)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#multiplication-coprocessor">Multiplication coprocessor</a></li>
+<li><a href="#balance">Balance</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              202 - Pico CoProcessor Interface (PCPI)
+            </h1>
+          
+
+        
+
+
+
+
+<p>In Chapter 1 we&rsquo;ve used the PicoRV32 implementation of a RISC-V. This implementation has a number of interfaces to the outside world. The memory interface was already discussed. In this section the Pico CoProcessor Interface (PCPI) is handled.</p>
+
+<h2 id="multiplication-coprocessor">Multiplication coprocessor</h2>
+
+<p>To illustrate (the use of) a coprocessor, let&rsquo;s take the multiplication. In the previous section it is illustrated how the compiler jumped in to achieve multiplication. Depending on the factors, this might take a lot time.</p>
+
+<p>The <strong>PicoRV32</strong> comes with an example multiplier in hardware. The design is shown in the image below.</p>
+
+<div class="multiHcolumn">
+  
+<div class="column">
+  <p><img src="../../img/200/pcpi_mul.png" alt="hwdesign_mul" /></p>
+
+</div>    
+<div class="column">
+  <p>By now, most of the signals of the PCPI interface should make sense.</p>
+
+<h3 id="control-path">Control path</h3>
+
+<ul>
+<li><strong>pcpi_valid</strong>: a single bit signal that indicates the instruction is valid;</li>
+<li><strong>pcpi_insn</strong>: a 32-bit instruction. This instruction is fetched by the PicoRV32 and handed over to the coprocessor (if needed);</li>
+<li><strong>pcpi_ready</strong>: a single bit signal that indicates the coprocessor is done;</li>
+<li><strong>pcpi_wait</strong>: a single bit signal that indicates the coprocessor needs more time;</li>
+<li><strong>pcpi_wr</strong>: a single bit write enable signal to the PicoRV32.</li>
+</ul>
+
+<h3 id="data-path">Data path</h3>
+
+<ul>
+<li><strong>pcpi_rs1</strong>: a 32-bit bus containing the first factor;</li>
+<li><strong>pcpi_rs2</strong>: a 32-bit bus containing the second factor;</li>
+<li><strong>pcpi_rd</strong>: a 32-bit bus containing the product;</li>
+</ul>
+
+</div>    
+
+<p></div></p>
+
+<p>Consulting the <a href="https://github.com/YosysHQ/picorv32#pico-co-processor-interface-pcpi" target="_blank">readme</a> file of the PicoRV32 learns:</p>
+
+<ul>
+<li>the instruction that is implemented through the coprocessor should be <strong>non-branching</strong>;</li>
+<li>the <strong>pcpi_valid</strong> signal only goes on for <em>unsupported</em> instructions;</li>
+<li>the <strong>pcpi_insn</strong>, <strong>pcpi_rs1</strong> and <strong>pcpi_rs2</strong> fields are parsed by the PicoRV32;</li>
+<li>the PicoRV32 core can optionally decode the <strong>pcpi_rd</strong> field of the instruction and write the value from pcpi_rd to the respective register.</li>
+<li><i>When no external PCPI core acknowledges the instruction within 16 clock cycles, then an illegal instruction exception is raised and the respective interrupt handler is called. <strong>A PCPI core that needs more than a couple of cycles to execute an instruction, should assert pcpi_wait as soon as the instruction has been decoded successfully</strong> and keep it asserted until it asserts pcpi_ready. This will prevent the PicoRV32 core from raising an illegal instruction exception</i></li>
+</ul>
+
+<p>If all of the above <em>rules</em> are obeyed (which they are in the example), the PicoRV32 can offload all the <strong>mul</strong> instructions to the coprocessor. This option should be enabled in the PicoRV32 through the <em>parameters</em>: <strong>ENABLE_PCPI</strong> and <strong>ENABLE_MUL</strong>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vhdl" data-lang="vhdl">    picorv32_inst00<span style="color:#f92672">:</span> <span style="color:#66d9ef">component</span> <span style="color:#a6e22e">picorv32</span>
+        <span style="color:#66d9ef">generic</span> <span style="color:#66d9ef">map</span>(
+			...
+			ENABLE_PCPI <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;1&#39;</span>,
+			ENABLE_MUL <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;1&#39;</span>,
+			...</code></pre></div>
+
+<h2 id="balance">Balance</h2>
+
+<p>Running the code above, with the coprocessor present, give the same result as the software-only variant. <b><i>Lucky us !!</i></b> 😃</p>
+
+<p>Why should you go for one of both then ? That&rsquo;s an important question and/or decision. To have some arguments in calling the shots, numbers can come in handy.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right">software only</th>
+<th align="right">hardware + software</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>filesize of .elf file</strong> (bytes)</td>
+<td align="right">5&rsquo;460</td>
+<td align="right"><span style="background-color: green; color: white; padding: 0px 50px">5&rsquo;068</style></td>
+</tr>
+
+<tr>
+<td><strong>duration of program</strong> (CC)</td>
+<td align="right">467</td>
+<td align="right"><span style="background-color: green; color: white; padding: 0px 50px">404</style></td>
+</tr>
+
+<tr>
+<td><strong>required LUTs</strong></td>
+<td align="right"><span style="background-color: green; color: white; padding: 0px 50px">897</style></td>
+<td align="right">1&rsquo;205</td>
+</tr>
+
+<tr>
+<td><strong>required registers</strong></td>
+<td align="right"><span style="background-color: green; color: white; padding: 0px 50px">574</style></td>
+<td align="right">868</td>
+</tr>
+</tbody>
+</table>
+
+<div class="centeredColumn50">
+    
+<ul>
+<li>the software only version needs more instruction memory. This makes sense as some additional, custom functions are generated to realise the multiplication.</li>
+<li>the version with the coprocessor finishes the job quicker.</li>
+<li>the software only version requires less configurable resources (on FPGA)</li>
+</ul>
+
+  </div>    
+
+<p>With these arguments, better-informed decisions can be made.</p>
+
+<ul>
+<li>If the available instruction memory is of the utmost importance, some hardware offloading might be useful.</li>
+<li>For applications where the cost is the most important feature, having fewer hardware coprocessors might be interesting.</li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../../200_coprocessor/201_coprocessor/" title="201 - Coprocessor"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../../200_coprocessor/203_coproccesor_hd/" title="203 - Coprocessor example" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js?1682322548"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1682322548"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1682322548"></script>
+    <script src="../../js/jquery.sticky.js?1682322548"></script>
+    <script src="../../js/featherlight.min.js?1682322548"></script>
+    <script src="../../js/highlight.pack.js?1682322548"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1682322548"></script>
+    <script src="../../js/learn.js?1682322548"></script>
+    <script src="../../js/hugo-learn.js?1682322548"></script>
+    
+        
+            <script src="../../mermaid/mermaid.js?1682322548"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

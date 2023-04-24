@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="../../images/favicon.png" type="image/png">
+
+    <title>403 - Example :: HW/SW codesign</title>
+
+    
+    <link href="../../css/nucleus.css?1682322548" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1682322548" rel="stylesheet">
+    <link href="../../css/hybrid.css?1682322548" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1682322548" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1682322548" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1682322548" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1682322548" rel="stylesheet">
+    <link href="../../css/theme.css?1682322548" rel="stylesheet">
+    <link href="../../css/tabs.css?1682322548" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1682322548" rel="stylesheet">
+    
+    <link href="../../css/theme-kul.css?1682322548" rel="stylesheet">
+    
+    
+
+    <script src="../../js/jquery-3.3.1.min.js?1682322548"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src=../../js/exercises.js></script> 
+  </head>
+  <body class="" data-url="/400_interrupt/403_example/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="https://www.kuleuven.be/kuleuven/" target="_blank">
+  <img src="../../img/style/kul.png" alt="KU Leuven" /><br/>
+</a>
+<a href="https://www.uhasselt.be/" target="_blank">
+  <img src="../../img/style/uhasselt.svg" alt="UHasselt" id="uhlogo" />
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js?1682322548"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1682322548"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/kuleuven-diepenbeek.github.io\/course_hwswcodesign\/";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js?1682322548"></script>
+
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/100_processor/" title="1 Processor" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../100_processor/">
+          1 Processor
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/101_processor/" title="101 - Processor" class="dd-item ">
+        <a href="../../100_processor/101_processor/">
+        101 - Processor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/102_riscv/" title="102 - RISC-V" class="dd-item ">
+        <a href="../../100_processor/102_riscv/">
+        102 - RISC-V
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/103_picorv/" title="103 - PicoRV32" class="dd-item ">
+        <a href="../../100_processor/103_picorv/">
+        103 - PicoRV32
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/104_crosscomp/" title="104 - Cross compiling" class="dd-item ">
+        <a href="../../100_processor/104_crosscomp/">
+        104 - Cross compiling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/105_simulation/" title="105 - Simulation" class="dd-item ">
+        <a href="../../100_processor/105_simulation/">
+        105 - Simulation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/100_processor/106_exercises/" title="106 - Exercises" class="dd-item ">
+        <a href="../../100_processor/106_exercises/">
+        106 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/200_coprocessor/" title="2  Coprocessor" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../200_coprocessor/">
+          2  Coprocessor
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/201_coprocessor/" title="201 - Coprocessor" class="dd-item ">
+        <a href="../../200_coprocessor/201_coprocessor/">
+        201 - Coprocessor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/202_pcpi/" title="202 - Pico CoProcessor Interface (PCPI)" class="dd-item ">
+        <a href="../../200_coprocessor/202_pcpi/">
+        202 - Pico CoProcessor Interface (PCPI)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/203_coproccesor_hd/" title="203 - Coprocessor example" class="dd-item ">
+        <a href="../../200_coprocessor/203_coproccesor_hd/">
+        203 - Coprocessor example
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/200_coprocessor/204_exercises/" title="204 - Exercises" class="dd-item ">
+        <a href="../../200_coprocessor/204_exercises/">
+        204 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/300_soc/" title="3  System on Chip" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../300_soc/">
+          3  System on Chip
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/301_busarchs/" title="301 - Bus architectures" class="dd-item ">
+        <a href="../../300_soc/301_busarchs/">
+        301 - Bus architectures
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/302_counter/" title="302 - Counter peripheral" class="dd-item ">
+        <a href="../../300_soc/302_counter/">
+        302 - Counter peripheral
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/303_soc/" title="303 - System on Chip (SoC)" class="dd-item ">
+        <a href="../../300_soc/303_soc/">
+        303 - System on Chip (SoC)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/300_soc/304_exercises/" title="304 - Exercises" class="dd-item ">
+        <a href="../../300_soc/304_exercises/">
+        304 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/400_interrupt/" title="4  Interrupt" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="../../400_interrupt/">
+          4  Interrupt
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/401_interrupt/" title="401 - Interrupt" class="dd-item ">
+        <a href="../../400_interrupt/401_interrupt/">
+        401 - Interrupt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/402_handling/" title="402 - Interrupt handling" class="dd-item ">
+        <a href="../../400_interrupt/402_handling/">
+        402 - Interrupt handling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/403_example/" title="403 - Example" class="dd-item active">
+        <a href="../../400_interrupt/403_example/">
+        403 - Example
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/400_interrupt/404_exercises/" title="404 - Exercises" class="dd-item ">
+        <a href="../../400_interrupt/404_exercises/">
+        404 - Exercises
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/500_ascon/" title="5 ASCON" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../500_ascon/">
+          5 ASCON
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/500_ascon/501_ascon/" title="501 ASCON" class="dd-item ">
+        <a href="../../500_ascon/501_ascon/">
+        501 ASCON
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/500_ascon/502_profiling/" title="502 Profiling" class="dd-item ">
+        <a href="../../500_ascon/502_profiling/">
+        502 Profiling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/500_ascon/503_project/" title="503 ASCON project" class="dd-item ">
+        <a href="../../500_ascon/503_project/">
+        503 ASCON project
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/900_appendices/" title="9 Appendices" class="dd-item
+        
+        
+        
+        ">
+      <a href="../../900_appendices/">
+          9 Appendices
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/900_appendices/901_roger/" title="901 - Roger" class="dd-item ">
+        <a href="../../900_appendices/901_roger/">
+        901 - Roger
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://uhintra03.uhasselt.be/studiegidswww/opleidingsonderdeel.aspx?a=2022&amp;i=3468&amp;n=4&amp;t=04"><i class='fa fa-university'></i> ECTS Sheet</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://p.cygnus.cc.kuleuven.be/webapps/blackboard/execute/announcement?method=search&amp;context=course&amp;course_id=_1128739_1"><i class='fa fa-university'></i> Toledo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../../'>HWSW codesign</a> > <a href='../../400_interrupt/'>4  Interrupt</a> > 403 - Example
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#hardware">HARDWARE</a>
+<ul>
+<li><a href="#risc-v-instantiation">RISC-V instantiation</a></li>
+</ul></li>
+<li><a href="#software">SOFTWARE</a>
+<ul>
+<li><a href="#picorv32-custom-instructions">PicoRV32 custom instructions</a></li>
+<li><a href="#reset-vector">Reset vector</a></li>
+<li><a href="#interrupt-handler">Interrupt handler</a></li>
+</ul></li>
+<li><a href="#simulation">Simulation</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              403 - Example
+            </h1>
+          
+
+        
+
+
+
+
+<p>This page gives a hands-on example of using interrupts with the PicoRV32.</p>
+
+<h2 id="hardware">HARDWARE</h2>
+
+<h3 id="risc-v-instantiation">RISC-V instantiation</h3>
+
+<div class="multiHcolumn">
+  
+<div class="column">
+  <p>At the instantiation, the following additional mappings need to be made:</p>
+
+<ul>
+<li>ENABLE_IRQ &hellip; to &lsquo;1&rsquo;</li>
+<li>ENABLE_IRQ_QREGS &hellip; to &lsquo;1&rsquo;</li>
+<li>ENABLE_IRQ_TIMER &hellip; to &lsquo;1&rsquo;</li>
+<li>MASKED_IRQ &hellip; to x&rdquo;00000000&rdquo;</li>
+<li>LATCHED_IRQ &hellip; to x&rdquo;FFFFFFFF&rdquo;</li>
+<li>PROGADDR_RESET &hellip; to x&rdquo;00000000&rdquo;</li>
+<li>PROGADDR_IRQ &hellip; to x&rdquo;00000010&rdquo;</li>
+</ul>
+
+<p>These settings:</p>
+
+<ul>
+<li>enable the IRQ</li>
+<li>ensures the IRQs are <strong>not masked-out</strong></li>
+<li>set the reset vector</li>
+<li>set the IRQ handler</li>
+</ul>
+
+<p>Interrupts can be given through signal <strong>irq</strong>, and the ack&rsquo;s come at the <strong>eoi</strong> signal.</p>
+
+</div>    
+<div class="column">
+  <p><img src="../../img/400/screenshot_example_1.png" alt="example" /></p>
+
+</div>    
+
+<p></div></p>
+
+<h2 id="software">SOFTWARE</h2>
+
+<h3 id="picorv32-custom-instructions">PicoRV32 custom instructions</h3>
+
+<p>The PicoRV32 has a handful of custom instructions. To make the assembly-code (a bit) more readable some custom instructions and register-names have been defined. These can be found in <strong>custom_ops.S</strong> from the <a href="https://github.com/YosysHQ/picorv32/blob/master/firmware/custom_ops.S" target="_blank">PicoRV32 Github repository</a>.</p>
+
+<ul>
+<li><strong>picorv32_getq_insn()</strong>: copy q-register to gp-register</li>
+<li><strong>picorv32_setq_insn()</strong>: copy gp-register to q-register</li>
+<li><strong>picorv32_retirq_insn()</strong>: return from interrupt and re-enable interrupts</li>
+<li><strong>picorv32_maskirq_insn()</strong>: write a new value to the irq mask register and reads the old value (The &ldquo;IRQ Mask&rdquo; register contains a bitmask of masked (disabled) interrupts).</li>
+<li><strong>picorv32_waitirq_insn()</strong>: pause execution until an interrupt becomes pending</li>
+<li><strong>picorv32_timer_insn()</strong>: reset the timer counter to a new value.</li>
+</ul>
+
+
+<div class="notices note" ><p>More info <a href="https://github.com/YosysHQ/picorv32#custom-instructions-for-irq-handling" target="_blank">here</a>.</p>
+</div>
+
+
+<h3 id="reset-vector">Reset vector</h3>
+
+<p>The <strong>start.S</strong> assembly file that has been used up until now, needs to be extended.</p>
+
+<div class="multiHcolumn">
+  
+<div class="column">
+  <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">reset_vec:
+    <span style="color:#75715e">// no more than 16 bytes here !
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// enable all interrupts
+</span><span style="color:#75715e"></span>  picorv32_maskirq_insn(zero, zero)
+    <span style="color:#75715e">// jump to start function
+</span><span style="color:#75715e"></span>  j start</code></pre></div>
+
+<p></div><br />
+<div class="column">
+  <ul>
+<li>The reset vector can not contain more than 16 instructions. Otherwise, exceeding the 0x10 offset of the <strong>PROGADDR_IRQ</strong>, will overwrite the IRQ vector.</li>
+<li>All the interrupts are enabled (by setting their <strong>mask-value</strong> to zero).</li>
+<li>A jump to <span style="background-color: #DAE8FC; color: #6C8EBF">&nbsp;start&nbsp;</span> is made.</li>
+</ul></p>
+
+<p></div></p>
+
+<p></div></p>
+
+<h3 id="interrupt-handler">Interrupt handler</h3>
+
+<p>The <strong>start.S</strong> assembly file that has been used up until now, needs to be extended some more.</p>
+
+<div class="multiHcolumn">
+  
+<div class="column">
+  <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">.balign <span style="color:#ae81ff">16</span>
+irq_vec:
+    <span style="color:#75715e">/* save registers, by copying through x1 and x2 */</span>
+    picorv32_setq_insn(q2, x1)
+    picorv32_setq_insn(q3, x2)
+
+    lui x1, <span style="color:#f92672">%</span>hi(irq_regs)
+    addi x1, x1, <span style="color:#f92672">%</span>lo(irq_regs)
+
+    picorv32_getq_insn(x2, q0)
+    sw x2,   <span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+
+    picorv32_getq_insn(x2, q2)
+    sw x2,   <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+
+    picorv32_getq_insn(x2, q3)
+    sw x2,   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+
+    sw x3,   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x4,   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x5,   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x6,   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x7,   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x8,   <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x9,   <span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x10, <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x11, <span style="color:#ae81ff">11</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x12, <span style="color:#ae81ff">12</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x13, <span style="color:#ae81ff">13</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x14, <span style="color:#ae81ff">14</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x15, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x16, <span style="color:#ae81ff">16</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x17, <span style="color:#ae81ff">17</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x18, <span style="color:#ae81ff">18</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x19, <span style="color:#ae81ff">19</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x20, <span style="color:#ae81ff">20</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x21, <span style="color:#ae81ff">21</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x22, <span style="color:#ae81ff">22</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x23, <span style="color:#ae81ff">23</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x24, <span style="color:#ae81ff">24</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x25, <span style="color:#ae81ff">25</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x26, <span style="color:#ae81ff">26</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x27, <span style="color:#ae81ff">27</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x28, <span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x29, <span style="color:#ae81ff">29</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x30, <span style="color:#ae81ff">30</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    sw x31, <span style="color:#ae81ff">31</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+
+    <span style="color:#75715e">/* call interrupt handler C function */</span>
+    lui sp, <span style="color:#f92672">%</span>hi(irq_stack)
+    addi sp, sp, <span style="color:#f92672">%</span>lo(irq_stack)
+
+    <span style="color:#75715e">/* arg0 = address of regs */</span>
+    lui a0, <span style="color:#f92672">%</span>hi(irq_regs)
+    addi a0, a0, <span style="color:#f92672">%</span>lo(irq_regs)
+
+    <span style="color:#75715e">/* arg1 = interrupt type */</span>
+    picorv32_getq_insn(a1, q1)
+
+    <span style="color:#75715e">/* call to C function */</span>
+    jal ra, irq
+
+
+    <span style="color:#75715e">/* restore registers */</span>
+    <span style="color:#75715e">/* new irq_regs address returned from C code in a0 */</span>
+    addi x1, a0, <span style="color:#ae81ff">0</span>
+
+    lw x2,   <span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    picorv32_setq_insn(q0, x2)
+
+    lw x2,   <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    picorv32_setq_insn(q1, x2)
+
+    lw x2,   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    picorv32_setq_insn(q2, x2)
+
+    lw x3,   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x4,   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x5,   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x6,   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x7,   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x8,   <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x9,   <span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x10, <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x11, <span style="color:#ae81ff">11</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x12, <span style="color:#ae81ff">12</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x13, <span style="color:#ae81ff">13</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x14, <span style="color:#ae81ff">14</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x15, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x16, <span style="color:#ae81ff">16</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x17, <span style="color:#ae81ff">17</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x18, <span style="color:#ae81ff">18</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x19, <span style="color:#ae81ff">19</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x20, <span style="color:#ae81ff">20</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x21, <span style="color:#ae81ff">21</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x22, <span style="color:#ae81ff">22</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x23, <span style="color:#ae81ff">23</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x24, <span style="color:#ae81ff">24</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x25, <span style="color:#ae81ff">25</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x26, <span style="color:#ae81ff">26</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x27, <span style="color:#ae81ff">27</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x28, <span style="color:#ae81ff">28</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x29, <span style="color:#ae81ff">29</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x30, <span style="color:#ae81ff">30</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+    lw x31, <span style="color:#ae81ff">31</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>(x1)
+
+    picorv32_getq_insn(x1, q1)
+    picorv32_getq_insn(x2, q2)
+    picorv32_retirq_insn()</code></pre></div>
+
+<p></div><br />
+<div class="column">
+  <p>As a reminder:</p></p>
+
+<ul>
+<li>register <strong>x0</strong> contains a hard-wired value of 0x00000000</li>
+<li>register <strong>x1</strong> contains the return address</li>
+<li>register <strong>x2</strong> contains the stack pointer (sp)</li>
+<li>register <strong>x3</strong> is for general purpose (gp)</li>
+<li>register <strong>x4</strong> contains the thread pointer (tp)</li>
+</ul>
+
+<hr/>
+
+<p>First of all, it has to be made sure that the interrupt handler starts at address 0x00000010. This can be done with <code>.balign 16</code>.</p>
+
+<p>Next, the copying of the <em>state</em> has to be done. All the copies need to be made to the <span style="background-color: #FFF2CC; color: #D6B656">&nbsp;interrupt registers&nbsp;</span>. This happens in these steps:</p>
+
+<ul>
+<li>backup of registers <strong>x1</strong> and <strong>x2</strong>
+
+<ul>
+<li>backup registers <strong>x1</strong> and <strong>x2</strong> to q2 and q3</li>
+<li>load the address of <span style="background-color: #FFF2CC; color: #D6B656">&nbsp;interrupt registers&nbsp;</span> in <strong>x1</strong></li>
+<li>copy registers <strong>q0</strong>, <strong>q2</strong> and <strong>q3</strong> to <span style="background-color: #FFF2CC; color: #D6B656">&nbsp;interrupt registers&nbsp;</span> by using <strong>relative addressing</strong> (offsets against the value that is stored in <strong>x1</strong>), through <strong>x2</strong></li>
+</ul></li>
+<li>backup of registers <strong>x3</strong> .. <strong>x31</strong>
+
+<ul>
+<li>copy the registers to <span style="background-color: #FFF2CC; color: #D6B656">&nbsp;interrupt registers&nbsp;</span> by using <strong>relative addressing</strong> (offsets against the value that is stored in <strong>x1</strong>), through <strong>x2</strong></li>
+</ul></li>
+</ul>
+
+<p>When everything is safely backed up, it&rsquo;s time to call the actual instructions for handling the interrupt. This is a <strong>C-function</strong>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">uint32_t <span style="color:#f92672">*</span>irq(uint32_t <span style="color:#f92672">*</span>regs, uint32_t irqs)</code></pre></div>
+
+<p>Before a <strong>call</strong> to this function can be made, the <strong>stack pointer (sp)</strong> is changed to use the <span style="background-color: #D5E8D4; color: #82B366">&nbsp;interrupt stack&nbsp;</span>.</p>
+
+<p>The two arguments that are passed to the <strong>irq</strong> function need to be stored in <strong>a0</strong> and <strong>a1</strong>. These arguments are set, prior to performing the jump-and-link to the actual function.</p>
+
+<p>The <em>restore</em> of the <em>state</em> is done in a similar fashion as the backup. When everything is tidied up, the &lsquo;return-from-interrupt&rsquo; function is called: <strong>picorv32_retirq_insn()</strong>.</p>
+
+<p></div></p>
+
+<p></div></p>
+
+<p>The actual C-code for the interrupt handler can be downloaded from the PicoRV32 Github repository (<a href="https://github.com/YosysHQ/picorv32/blob/master/firmware/irq.c" target="_blank">irq.c</a>).</p>
+
+<div class="multiHcolumn">
+  
+<div class="column">
+  <h3 id="interrupt-registers">Interrupt registers</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">irq_regs:
+    <span style="color:#75715e">// registers are saved to this memory region during interrupt handling
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// the program counter is saved as register 0
+</span><span style="color:#75715e"></span>  .fill <span style="color:#ae81ff">32</span>,<span style="color:#ae81ff">4</span></code></pre></div>
+
+<p></div><br />
+<div class="column">
+  <h3 id="interrupt-stack">Interrupt stack</h3></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"> <span style="color:#75715e">// stack for the interrupt handler
+</span><span style="color:#75715e"></span>  .fill <span style="color:#ae81ff">128</span>,<span style="color:#ae81ff">4</span>
+irq_stack:</code></pre></div>
+
+<p></div></p>
+
+<p></div></p>
+
+<h2 id="simulation">Simulation</h2>
+
+<p>With these modifications to hardware and software, the simulation should be able to show the working, interrupt-able processor.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../../400_interrupt/402_handling/" title="402 - Interrupt handling"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../../400_interrupt/404_exercises/" title="404 - Exercises" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js?1682322548"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1682322548"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1682322548"></script>
+    <script src="../../js/jquery.sticky.js?1682322548"></script>
+    <script src="../../js/featherlight.min.js?1682322548"></script>
+    <script src="../../js/highlight.pack.js?1682322548"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1682322548"></script>
+    <script src="../../js/learn.js?1682322548"></script>
+    <script src="../../js/hugo-learn.js?1682322548"></script>
+    
+        
+            <script src="../../mermaid/mermaid.js?1682322548"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

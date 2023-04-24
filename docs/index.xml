@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HWSW codesign on HW/SW codesign</title>
+    <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/</link>
+    <description>Recent content in HWSW codesign on HW/SW codesign</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <managingEditor>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</managingEditor>
+    <webMaster>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</webMaster>
+    
+	<atom:link href="https://kuleuven-diepenbeek.github.io/course_hwswcodesign/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>101 - Processor</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/101_processor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/101_processor/</guid>
+      <description>Hello world !!
+Every computer(-like) system has a processor at the heart of its system. Throughout this program you have encountered a number of them already, in different sizes and with different capabilities. There was the Arduino in 2Ba which has an 8-bit Atmel AVR controller; the (most recent version of) SoC-lab course uses the 32-bit soft-core MicroBlaze processor; and (without being able to give the specs) there is of course the processor in your laptop.</description>
+    </item>
+    
+    <item>
+      <title>102 - RISC-V</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/102_riscv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/102_riscv/</guid>
+      <description>As you know by know, computers speak a different language than us, humans. Also, different computers don&amp;rsquo;t speak the same language, although some similarities can be detected. Where all our words in the English or Dutch language are nicely summarised in a dictionary. Similarly, the words that a processor speaks are summarised in an instruction set.
+When we hear stories, from a certain level of abstraction these stories are simply a collection of words that occur in the dictionary.</description>
+    </item>
+    
+    <item>
+      <title>103 - PicoRV32</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/103_picorv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/103_picorv/</guid>
+      <description>RISC-V is not a processor, but a specification. Of course there is the Internet and plenty of people have made an implementation for this specification. In this course we&amp;rsquo;ll be working with the PicoRV32. The entity (or module) looks like the image below.
+Native memory interface The PicoRV32 has a simple memory interface. It allows for a single memory transfer at a time. Every transaction is initiated by the PicoRV32 core, by raising mem_valid.</description>
+    </item>
+    
+    <item>
+      <title>104 - Cross compiling</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/104_crosscomp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/104_crosscomp/</guid>
+      <description>To make a program run on the PicoRV32, it has to be written first. The software that is written in this course will be in C. Of course, the processor does not understand C instructions. As you have seen in earlier courses, the C-code is first compiled and then linked to end up with a binary. This binary contains machine code that can be ran on the processor.
+If the machine on which the compiler and linker are executed differs from the target machine that is to execute the program, the term cross-compilation is used.</description>
+    </item>
+    
+    <item>
+      <title>105 - Simulation</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/105_simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/105_simulation/</guid>
+      <description>By now you should have a Vivado project that is able to simulate the PicoRV. Also, you should have a working setup that compiles C-code into a .hex file. It&amp;rsquo;s time to close this loop.
+In the depicted testbench sits the PicoRV32 in the center. This device-under-test (DUT) is the unmodified code from the PicoRV32 repo.
+As there currently is no implementation for the memory, the testbench instantiates a model (picorv_mem_model.</description>
+    </item>
+    
+    <item>
+      <title>106 - Exercises</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/106_exercises/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/106_exercises/</guid>
+      <description>Below are a number of programming exercises. The aim is that you 1) prepare a working setup, and 2) that you refresh you low-level C programming skills. In the exercises where inputs are required, these inputs can be hardcoded as we have no means of inputting data to the processor.
+Exercise 101 For this exercise you should simply try to get the examples of this chapter to work.  create a Vivado project import the picorv32.</description>
+    </item>
+    
+    <item>
+      <title>201 - Coprocessor</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/201_coprocessor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/201_coprocessor/</guid>
+      <description>All the code that you write has to be executed on the processor. With computers being ever more powerful, it is easy to forget about all the work a processor is doing. Irrespective of how simple a job might seem, it still needs to be executed. The example illustrates this. The only thing the processor needs to do is output 2 values. Nonetheless with the software as seen before, this takes 74 clock cycles.</description>
+    </item>
+    
+    <item>
+      <title>202 - Pico CoProcessor Interface (PCPI)</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/202_pcpi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/202_pcpi/</guid>
+      <description>In Chapter 1 we&amp;rsquo;ve used the PicoRV32 implementation of a RISC-V. This implementation has a number of interfaces to the outside world. The memory interface was already discussed. In this section the Pico CoProcessor Interface (PCPI) is handled.
+Multiplication coprocessor To illustrate (the use of) a coprocessor, let&amp;rsquo;s take the multiplication. In the previous section it is illustrated how the compiler jumped in to achieve multiplication. Depending on the factors, this might take a lot time.</description>
+    </item>
+    
+    <item>
+      <title>203 - Coprocessor example</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/203_coproccesor_hd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/203_coproccesor_hd/</guid>
+      <description>Coprocessor example As an example of a custom coprocessor a hardware component is made for calculating the Hamming distance.
+Control path The control path is made with a set-reset flipflop. The condition for setting is determined by the pcpi_valid signal and the instruction. Only if the opcode in pcpi_insn is 0110011 and the additional opcode field (funct7) is *0000001, this coprocessor is targeted.
+As long as the set-reset-flipflop is turned on, the coprocessor keeps on working.</description>
+    </item>
+    
+    <item>
+      <title>204 - Exercises</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/204_exercises/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/204_exercises/</guid>
+      <description>Exercise 201 Try to get the example for the Hamming distance to work.   Make a comparison like the table in 202 where you compare your pure software implementation of the Hamming distance with the codesign.  Exercise 202 Transform the Hamming distance coprocessor to work on the div instruction in stead of the mul instruction.  Exercise 203 Make a new coprocessor that calculates the average of two integer numbers.</description>
+    </item>
+    
+    <item>
+      <title>301 - Bus architectures</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/301_busarchs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/301_busarchs/</guid>
+      <description>A SoC consists of more components than only a processor, as the name already implies. The system has multiple components depending on the task for which it was designed. Having multiple components like timers, interrupt controllers, or communication cores are very useful, unless they can&amp;rsquo;t be used. To achieve reachability, all the components must be connected through some bus architecture to the processor.
+A number of standardised bus architectures exist, for example:</description>
+    </item>
+    
+    <item>
+      <title>302 - Counter peripheral</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/302_counter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/302_counter/</guid>
+      <description>When a hardware/software codesign is made, we need to be able to measure the performance. A simple way to achieve this, is counting how many clock cycles certain operations take. Later on, this shall be revisited, but the peripheral will be useful (pinky swear).
+ Having a arrived at your Master year, a counter is not exactly rocket science, nor brain surgery. The simple design that is shown, is a counter that either be incremented or cleared.</description>
+    </item>
+    
+    <item>
+      <title>303 - System on Chip (SoC)</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/303_soc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/303_soc/</guid>
+      <description>A system on a chip or SoC stands in contrast to the traditional PC or laptop which are organised around a motherboard. In the third Bachelor of this program an entire course was spent on this topic: System-on-Chip design and experimentation. If you need a refresher, please head over to the website.
+The figure below shows an example of a SoC that we can build with what was seen before.</description>
+    </item>
+    
+    <item>
+      <title>304 - Exercises</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/304_exercises/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/304_exercises/</guid>
+      <description>Exercise 301 Try to get the example for the counter-enforced SoC to work.  Exercise 302 Make a new (as in: don&#39;t modify the dummy) component that can calculated the Hamming distance of two values.   Make a comparison like the table in 202 where you compare your pure software implementation of the Hamming distance with the codesign.  Exercise 303 Make a new component that calculates the sine of a positive angle.</description>
+    </item>
+    
+    <item>
+      <title>401 - Interrupt</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/401_interrupt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/401_interrupt/</guid>
+      <description>In the beginning of the processor-age, all software was bare metal. This means that the processor is simply executing instructions, directly on the hardware. In contrast to bare metal, most computers nowadays run an operating system. However, many microcontrollers still run bare-metal-code. Everything that we have been doing, was bare metal, too.
+Multiple tasks When operating without an OS, it becomes more difficult to run multiple tasks. Let&amp;rsquo;s take the example of a UART, aka the serial port.</description>
+    </item>
+    
+    <item>
+      <title>402 - Interrupt handling</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/402_handling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/402_handling/</guid>
+      <description>Interrupts can be generated by both hardware and software, but hardware-interrupts are focussed on here. A processor typically has a number of hardware interrupts. These signals are connected to the cores that generate interrupts.
+When a core wants to signal an interruption, it raises the signal. This is called an Interrupt Request (IRQ). The processor has to halt its operation, to the interrupt can be handled. However, the processor has a context.</description>
+    </item>
+    
+    <item>
+      <title>403 - Example</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/403_example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/403_example/</guid>
+      <description>This page gives a hands-on example of using interrupts with the PicoRV32.
+HARDWARE RISC-V instantiation At the instantiation, the following additional mappings need to be made:
+ ENABLE_IRQ &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_QREGS &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_TIMER &amp;hellip; to &amp;lsquo;1&amp;rsquo; MASKED_IRQ &amp;hellip; to x&amp;rdquo;00000000&amp;rdquo; LATCHED_IRQ &amp;hellip; to x&amp;rdquo;FFFFFFFF&amp;rdquo; PROGADDR_RESET &amp;hellip; to x&amp;rdquo;00000000&amp;rdquo; PROGADDR_IRQ &amp;hellip; to x&amp;rdquo;00000010&amp;rdquo;  These settings:
+ enable the IRQ ensures the IRQs are not masked-out set the reset vector set the IRQ handler  Interrupts can be given through signal irq, and the ack&amp;rsquo;s come at the eoi signal.</description>
+    </item>
+    
+    <item>
+      <title>404 - Exercises</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/404_exercises/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/404_exercises/</guid>
+      <description>Exercise 401 Try to get the example to work.  Exercise 402 Determine how much time it takes for handling a single interrupt.  Exercise 403 Start from the example of the counter in [302](http://localhost:1313/hwswcodesign-course/300_soc/302_counter/). Have the peripheral trigger an interrupt when the count reaches **100&#39;000&#39;000**. Given that a clock cycle takes 10 ns. an interrupt should be triggered every (10 ns/CC x 100&#39;000&#39;000 CC) second. Meanwhile the processor is in an endless loop that prints something.</description>
+    </item>
+    
+    <item>
+      <title>501 ASCON</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/501_ascon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/501_ascon/</guid>
+      <description>ASCON is a cryptographic scheme. It was chosen as the winning candidate in NIST&amp;rsquo;s &amp;ldquo;Lightweight Cryptography&amp;rdquo;-competition. This announcement was made on February 7th, 2023.
+Candidates that were submitted to this competition needed to have these two functionalities: authenticated encryption and hashing. For the project in this course, you&amp;rsquo;ll be making a SW-only and a HW/SW implementation of the hashing functionality. The complete specifications for ASCON can be found here.</description>
+    </item>
+    
+    <item>
+      <title>502 Profiling</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/502_profiling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/502_profiling/</guid>
+      <description>In the first step of the project, a software implementation of ASCON hash is to be made. The prototype of the hash function should look like this:
+void ascon_hash(uint32_t * digest, uint32_t * message, uint8_t mlen);  the first argument contains a pointer to the reserved memory in which the digest will be saved; the second argument contains a pointer to the first memory address on which the message is saved; the third and final argument is an unsigned byte that gives the length of the message in number of 32-bit words.</description>
+    </item>
+    
+    <item>
+      <title>503 ASCON project</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/503_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/503_project/</guid>
+      <description>As it is an official holiday, there is no lesson on May first. However it will be the deadline for the first part of the project.
+The first part is a pure software implementation of ASCON hash. The functionality should be triggered upon this function:
+void ascon_hash(uint32_t * digest, uint32_t * message, uint8_t mlen);  The maximum value for length is 255. This means that the input can be 255 x 32 bits = 8160 bits which is 1020 bytes.</description>
+    </item>
+    
+    <item>
+      <title>901 - Roger</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/900_appendices/901_roger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/900_appendices/901_roger/</guid>
+      <description>Within the Engineering Technology program it is sometimes needed to have access to a server. For the purpose, Roger was born.
+This server is accessible over the Internet through SSH. You have received (or will receive) an email that contains your username and password.
+SSH-ing To connect to Roger, an SSH client should be used (e.g. putty). In case a GUI will be used, an Xserver should be run on your machine.</description>
+    </item>
+    
+  </channel>
+</rss>
