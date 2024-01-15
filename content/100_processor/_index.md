@@ -13,6 +13,3 @@ weight: 100
   url="https://www.pexels.com/photo/dell-motherboard-and-central-processing-unit-1432675/"
   source="pexels"
   >}}
-
-
-test
