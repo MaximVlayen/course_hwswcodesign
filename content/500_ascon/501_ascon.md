@@ -1,7 +1,7 @@
 ---
 title: '501 ASCON'
 weight: 501
-draft: false
+draft: true
 ---
 
 **ASCON** is a cryptographic scheme. It was chosen as the winning candidate in NIST's "Lightweight Cryptography"-[competition](https://csrc.nist.gov/Projects/lightweight-cryptography). [This](https://csrc.nist.gov/News/2023/lightweight-cryptography-nist-selects-ascon) announcement was made on February 7th, 2023.

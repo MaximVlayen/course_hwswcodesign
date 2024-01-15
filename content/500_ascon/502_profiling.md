@@ -1,7 +1,7 @@
 ---
 title: '502 Profiling'
 weight: 502
-draft: false
+draft: true
 ---
 
 In the first step of the project, a **software implementation of ASCON hash** is to be made. The prototype of the hash function should look like this:

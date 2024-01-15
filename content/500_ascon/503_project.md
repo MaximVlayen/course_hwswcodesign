@@ -1,7 +1,7 @@
 ---
 title: '503 ASCON project'
 weight: 503
-draft: false
+draft: true
 ---
 
 As it is an official holiday, there is no lesson on **May first**. However it will be the deadline for the first part of the project. 
