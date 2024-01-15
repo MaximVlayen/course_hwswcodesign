@@ -15,26 +15,35 @@ pygmentsCodefences = true
 # for .Lastmod to work with .GitInfo: --enableGitInfo https://gohugo.io/variables/git/
 enableGitInfo = true
 
-# for new Hugo 0.6x, markup changed to CommonMark.
-[markup]
-  defaultMarkdownHandler = "blackfriday"
-  [markup.blackFriday]
-    skipHTML = false
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "monokai"
-    tabWidth = 4
 
-[blackfriday]
-  hrefTargetBlank = true
+# Blackfriday was removed in Hugo v0.100.0.
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+
+  [markup.goldmark.renderer]
+    unsafe= true
+
+
+# for new Hugo 0.6x, markup changed to CommonMark.
+# [markup]
+#   defaultMarkdownHandler = "blackfriday"
+#   [markup.blackFriday]
+#     skipHTML = false
+#   [markup.highlight]
+#     anchorLineNos = false
+#     codeFences = true
+#     guessSyntax = false
+#     hl_Lines = ""
+#     lineAnchors = ""
+#     lineNoStart = 1
+#     lineNos = false
+#     lineNumbersInTable = true
+#     noClasses = true
+#     style = "monokai"
+#     tabWidth = 4
+# 
+# [blackfriday]
+#   hrefTargetBlank = true
 
 [taxonomies]
     tag = "tags"
@@ -57,11 +66,11 @@ home = [ "HTML", "RSS", "JSON"]
 [[menu.shortcuts]] 
 name = "<i class='fa fa-university'></i> Toledo"
 identifier = "tol"
-url = "https://p.cygnus.cc.kuleuven.be/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_1128739_1"
+url = "https://p.cygnus.cc.kuleuven.be/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_1176295_1&handle=cp_announcements&mode=cpview"
 weight = 10
 
 [[menu.shortcuts]] 
 name = "<i class='fa fa-university'></i> ECTS Sheet"
 identifier = "stud"
-url = "https://uhintra03.uhasselt.be/studiegidswww/opleidingsonderdeel.aspx?a=2022&i=3468&n=4&t=04"
+url = "https://studiegidswww.uhasselt.be/opleidingsonderdeel.aspx?a=2023&i=3468&n=4&t=04"
 weight = 1
