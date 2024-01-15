@@ -1,0 +1,10 @@
+.hugo_build.lock
+
+# ignore all object files
+**/*.o
+
+# ignore all object files
+**/*.elf
+**/*.hex
+**/*.map
+**/*.objdump
