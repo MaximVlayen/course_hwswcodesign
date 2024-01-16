@@ -58,7 +58,7 @@ architecture Behavioural of picorv32_mem_model is
 
     signal masked_data, mask : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0);
     signal outgoing_data : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0);
-    signal flag, flag_d, flag_dd : STD_LOGIC;
+    signal flag : STD_LOGIC;
     signal mem_addr_int : integer range 0 to 16384-1;
     signal write_operation : STD_LOGIC;
 
@@ -111,8 +111,6 @@ begin
             outgoing_data <= (others => '0');
             mem <= (others => (others => '0'));
             flag <= '0';
-            -- flag_d <= '0';
-            -- flag_dd <= '0';
 
             v_pointer := 0;
             file_open(fh, FNAME_HEX, read_mode);
@@ -143,8 +141,6 @@ begin
                     outgoing_data <= mem(mem_addr_int);
                 end if;
             end if;
-            -- flag_d <= flag;
-            -- flag_dd <= flag_d;
             flag <= mem_valid_i;
         end if;
     end process;

@@ -18,19 +18,30 @@ void print_str(const char *p)
 		*((volatile unsigned int*)OUTPORT) = *(p++);
 }
 
+
 void print_dec(unsigned int val)
 {
-	char buffer[10];
-	char *p = buffer;
-	while (val || p == buffer) {
-		*(p++) = val % 10;
-		val = val / 10;
-	}
-	while (p != buffer) {
-		*((volatile unsigned int*)OUTPORT) = '0' + *(--p);
-	}
+	print_chr('n');
+	print_chr('o');
+	print_chr('p');
+	print_chr('e');
 	print_chr('\n');
 }
+
+// void print_dec(unsigned int val)
+// {
+// 	char buffer[10];
+// 	char *p = buffer;
+	
+// 	while (val || p == buffer) {
+// 		*(p++) = val % 10;
+// 		val = val / 10;
+// 	}
+// 	while (p != buffer) {
+// 		*((volatile unsigned int*)OUTPORT) = '0' + *(--p);
+// 	}
+// 	print_chr('\n');
+// }
 
 void print_hex(unsigned int val, int digits)
 {

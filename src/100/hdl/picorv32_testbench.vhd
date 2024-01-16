@@ -204,8 +204,8 @@ begin
     picorv32_mem_model_inst00: component picorv32_mem_model 
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
-            FNAME_HEX => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodedign/src/100/firmware/firmware.hex",
-            FNAME_OUT => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodedign/src/100/firmware/simulation_output.dat"
+            FNAME_HEX => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/100/firmware/firmware.hex",
+            FNAME_OUT => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/100/firmware/simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
