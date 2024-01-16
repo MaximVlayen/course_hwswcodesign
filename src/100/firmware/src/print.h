@@ -8,7 +8,7 @@
 #ifndef PRINT_H
 #define PRINT_H
 
-#define OUTPORT 0x80000000
+#define OUTPORT 0x10000000
 
 // print.c
 void print_chr(char ch);

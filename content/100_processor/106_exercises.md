@@ -21,6 +21,11 @@ As FPGA device, you can pick a <b>ZYNQ XC7Z020-1CLG400C</b>. An even better solu
 
 #### Exercise 102
 {{% centeredColumn 50 %}}
+Complete the <b>print_dec()</b> function.
+{{% /centeredColumn %}}
+
+#### Exercise 103
+{{% centeredColumn 50 %}}
 Write a firmware function <b>get_hamming_weight()</b> that can calculate the Hamming weight of a value. 
 
 Print the Hamming weight to the output.
@@ -30,11 +35,6 @@ unsigned int get_hamming_weight(unsigned int x);
 
 Determine how long it takes (in clock cycles) to perform the calculation !!
 
-{{% /centeredColumn %}}
-
-#### Exercise 103
-{{% centeredColumn 50 %}}
-Complete the <b>print_dec()</b> function.
 {{% /centeredColumn %}}
 
 
