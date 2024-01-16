@@ -8,3 +8,4 @@
 **/*.hex
 **/*.map
 **/*.objdump
+**/simulation_output.dat
