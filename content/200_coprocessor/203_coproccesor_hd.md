@@ -12,7 +12,7 @@ As an example of a custom coprocessor a hardware component is made for calculati
 
 #### Control path
 
-The control path is made with a **set-reset flipflop**. The condition for *setting* is determined by the **pcpi_valid** signal and the instruction. Only if the opcode in **pcpi_insn** is **0110011** and the additional opcode field (**funct7**) is **0000001*, this coprocessor is targeted. 
+The control path is made with a **set-reset flipflop**. The condition for *setting* is determined by the **pcpi_valid** signal and the instruction. Only if the opcode in **pcpi_insn** is **0110011** and the additional opcode field (**funct7**) is **0000001**, this coprocessor is targeted. 
 
 As long as the set-reset-flipflop is turned on, the coprocessor keeps on working. The data width is set to 32 bits, so after 32 iterations the coprocessor needs to be stopped. This is achieved by having a 32-bit register shifting in zeroes. If only a single 1-bit is present in this register, the **reset** should be set. This guarantees that the set-reset flipflop will be turned off **in the next clock cycle**.
 
@@ -35,7 +35,7 @@ The code below illustrates this cheat by *abusing* the **mul** instruction. This
 
 {{% multiHcolumn %}}
 {{% column %}}
-<u>In the C-code</u>, an <i>external</i> function is used. This function has to unsigned integers as parameters and also returns an unsigned integer. As this function is not coded in this file, you need to inform the compiler that this function <b>will be found</b> during linking. This is achieved with the <b>extern</b> keyword.
+<u>In the C-code</u>, an <i>external</i> function is used. This function has two unsigned integers as parameters and also returns an unsigned integer. As this function is not coded in this file, you need to inform the compiler that this function <b>will be found</b> during linking. This is achieved with the <b>extern</b> keyword.
 {{% /column %}}
 {{% column %}}
 <u>In the assembly</u>, the hwswcd_hd() function is programmed. As you can see below, the only instruction this function does is the <b>mul</b> with registers a0 and a1 as operands.

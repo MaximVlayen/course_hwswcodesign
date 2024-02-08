@@ -51,7 +51,7 @@ Running this C-code generates an output .dat file. After parsing the output look
 00000000000000000000000000110010 - 050 - 0x32 - 2
 00000000000000000000000000110100 - 052 - 0x34 - 4
 {{< /highlight >}}
-The value **624** is the product of the (hardcoded) values 208 and 3.
+The value <b>624</b> is the product of the (hardcoded) values 208 and 3.
 {{% /column %}}
 {{% /multiHcolumn %}}
 

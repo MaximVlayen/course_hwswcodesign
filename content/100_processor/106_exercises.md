@@ -25,18 +25,10 @@ Complete the <b>print_dec()</b> function.
 {{% /centeredColumn %}}
 
 #### Exercise 103
+
 {{% centeredColumn 50 %}}
-Write a firmware function <b>get_hamming_weight()</b> that can calculate the Hamming weight of a value. 
-
-Print the Hamming weight to the output.
-{{< highlight C >}}
-unsigned int get_hamming_weight(unsigned int x);
-{{< /highlight >}}
-
-Determine how long it takes (in clock cycles) to perform the calculation !!
-
+Update the simulation so that the output address is <b>0x8000000</b>.
 {{% /centeredColumn %}}
-
 
 #### Exercise 104
 
@@ -51,6 +43,7 @@ unsigned int get_hamming_weight(unsigned int x);
 Determine how long it takes (in clock cycles) to perform the calculation !!
 
 {{% /centeredColumn %}}
+
 
 #### Exercise 105
 
@@ -83,7 +76,7 @@ Determine how long it takes (in clock cycles) to perform the calculation !!
 #### Exercise 107
 
 {{% centeredColumn 50 %}}
-Write a firmware function <b>convert()</b> that converts Temperature from Fahrenheit to degrees Celsius. The result may be rounded down.
+Write a firmware function <b>convert()</b> that converts temperature from Fahrenheit to degrees Celsius. The result may be rounded down.
 
 Print the result to the output.
 {{< highlight C >}}
@@ -93,7 +86,9 @@ unsigned int convert(unsigned int x);
 Determine how long it takes (in clock cycles) to perform the calculation !!
 
 {{% notice note %}}
-(<b>0F</b> − 32) × 5/9 = -17,78&nbsp;<b>°C</b>
+(<b>&nbsp;F</b> − 32) × 5/9 = &nbsp;<b>°C</b>
+<br/>e.g. 32&nbsp;F&nbsp;=&nbsp;0&nbsp;°C
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;86&nbsp;F&nbsp;=&nbsp;30&nbsp;°C
 {{% /notice %}}
 
 {{% /centeredColumn %}}

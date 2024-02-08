@@ -56,7 +56,7 @@ If all of the above *rules* are obeyed (which they are in the example), the Pico
 
 ## Balance
 
-Running the code above, with the coprocessor present, give the same result as the software-only variant. <b><i>Lucky us !!</i></b> :smiley:
+Running the code above, with the coprocessor present, gives the same result as the software-only variant. <b><i>Lucky us !!</i></b> :smiley:
 
 Why should you go for one of both then ? That's an important question and/or decision. To have some arguments in calling the shots, numbers can come in handy.
 
@@ -69,9 +69,9 @@ Why should you go for one of both then ? That's an important question and/or dec
 
 {{% centeredColumn 50 %}}
 <ul>
-<li>the software only version needs more instruction memory. This makes sense as some additional, custom functions are generated to realise the multiplication.</li>
+<li>the software-only version needs more instruction memory. This makes sense as some additional, custom functions are generated to realise the multiplication.</li>
 <li>the version with the coprocessor finishes the job quicker.</li>
-<li>the software only version requires less configurable resources (on FPGA)</li>
+<li>the software-only version requires less configurable resources (on FPGA)</li>
 </ul>
 {{% /centeredColumn %}}
 

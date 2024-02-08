@@ -408,8 +408,8 @@ Disassembly of section .memory:
 
 {{% /column %}}
 {{% column %}}
-### ... to human-readable
-Next to 'decompiling' the binary .elf file to a human-readable it can also be translated to a flat text format. This can be achieved with a Python script **makehex.py**.
+### ... to FPGA-compatible
+Next to 'decompiling' the binary .elf file to a human-readable representation, it can also be translated to a flat text format. This can be achieved with a Python script **makehex.py**.
 
 An option to generate this hex dump is present in the Makefile and the result should look something like this.
 

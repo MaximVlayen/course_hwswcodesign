@@ -20,7 +20,7 @@ This approach is similar to how you *modelled* a clock source.
 
 The *picorv_mem_model* has an additional input **load_file**. With this input *set*, the model reads in a file into it's virtual memory. 
 
-In the previous section it was discussed how the result of a print function ended up in a write to address 0x10000000. This is also caught by this memory model. Every write to this address hence results in a write to file, e.g. **output.dat**. 
+In the previous section it was discussed how the result of a print function ended up in a write to address 0x10000000. This is also caught by this memory model. Every write to this address hence results in a write to file, e.g. **simulation_output.dat**. 
 
 
 {{% /column %}}
