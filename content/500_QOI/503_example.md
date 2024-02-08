@@ -279,4 +279,10 @@ The end marker is a fixed 8-byte value: <span style="font-weight: bold; backgrou
 
 The result of the QOI encoding of the image above hence is:
 
-<span style="font-weight: bold; background-color: orange">&nbsp;0x716F696600000008000000080300 0x5AC276 0xC232C230 0xC232C2300xC232C230 0xC26DC2FE7F7F7F 0xC22EC226 0xC22EC226C22EC226 0xC2 0x0000000000000001</span>
+<span style="font-weight: bold; background-color: orange">&nbsp;0x716F696600000008000000080300 0x5AC276 0xC232C230 0xC232C230 0xC232C230 0xC26DC2FE7F7F7F 0xC22EC226 0xC22EC226C22EC226 0xC2 0x0000000000000001&nbsp;</span>
+
+<span style="font-weight: bold; background-color: orange">&nbsp;716F6966000000080000000803005AC276C232C230C232C230C232C230C26DC2FE7F7F7FC22EC226C22EC226C22EC226C20000000000000001&nbsp;</span>
+
+This encoded result has a total size of **57 bytes**. If all the 64 pixels (8 by 8) would have to be stored in raw data, with an alpha channel, this would result in **256 bytes**. Without an alpha channel, this would result in **192 bytes** which is a reduction of **70%**!!
+
+If we assume that 1 image is to be recorded every ...
