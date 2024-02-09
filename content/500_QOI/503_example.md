@@ -275,7 +275,7 @@ There is still something in the RLE!! This is however handled equally as above. 
 
 The end marker is a fixed 8-byte value: <span style="font-weight: bold; background-color: orange"> 0x0000000000000001 </span>.
 
-# Example
+# Results of the example
 
 The result of the QOI encoding of the image above hence is:
 
@@ -285,4 +285,11 @@ The result of the QOI encoding of the image above hence is:
 
 This encoded result has a total size of **57 bytes**. If all the 64 pixels (8 by 8) would have to be stored in raw data, with an alpha channel, this would result in **256 bytes**. Without an alpha channel, this would result in **192 bytes** which is a reduction of **70%**!!
 
-If we assume that 1 image is to be recorded every ...
+If we assume that 1 image is to be recorded every 40 ms, this would result in 25 images per second. This is approximately the framerate of video. If the sensor would make **one image every 40 ms**, it also has to be encoded on that speed. In the simulation, as shown below, the encoding of a single image roughly takes 190000 ns. If we *<u>extrapolate</u>* this result, we get: 190000 ns / 64 pixels = 2.97 µs per pixel, and thus a **480p** image would take 640\*480\*3 µs = 307200*3 µs = 912384 µs = **912.4 ms**.
+
+![Image of simulation](/img/500/simulation.png)
+
+**... and this is an extrapolation!!**
+
+It is hard to give a fixed duration for the encoding of single image. An image of 307'200 consecutive white pixels will be done more quickly than 307'200 random pixels.
+
