@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <managingEditor>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</managingEditor>
-    <webMaster>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</webMaster>
-    
-	<atom:link href="https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <webMaster>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</webMaster><atom:link href="https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>401 - Interrupt</title>
       <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/401_interrupt/</link>
@@ -40,8 +36,8 @@ When a core wants to signal an interruption, it raises the signal. This is calle
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/403_example/</guid>
       <description>This page gives a hands-on example of using interrupts with the PicoRV32.
 HARDWARE RISC-V instantiation At the instantiation, the following additional mappings need to be made:
- ENABLE_IRQ &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_QREGS &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_TIMER &amp;hellip; to &amp;lsquo;1&amp;rsquo; MASKED_IRQ &amp;hellip; to x&amp;rdquo;00000000&amp;rdquo; LATCHED_IRQ &amp;hellip; to x&amp;rdquo;FFFFFFFF&amp;rdquo; PROGADDR_RESET &amp;hellip; to x&amp;rdquo;00000000&amp;rdquo; PROGADDR_IRQ &amp;hellip; to x&amp;rdquo;00000010&amp;rdquo;  These settings:
- enable the IRQ ensures the IRQs are not masked-out set the reset vector set the IRQ handler  Interrupts can be given through signal irq, and the ack&amp;rsquo;s come at the eoi signal.</description>
+ENABLE_IRQ &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_QREGS &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_TIMER &amp;hellip; to &amp;lsquo;1&amp;rsquo; MASKED_IRQ &amp;hellip; to x&amp;quot;00000000&amp;quot; LATCHED_IRQ &amp;hellip; to x&amp;quot;FFFFFFFF&amp;quot; PROGADDR_RESET &amp;hellip; to x&amp;quot;00000000&amp;quot; PROGADDR_IRQ &amp;hellip; to x&amp;quot;00000010&amp;quot; These settings:
+enable the IRQ ensures the IRQs are not masked-out set the reset vector set the IRQ handler Interrupts can be given through signal irq, and the ack&amp;rsquo;s come at the eoi signal.</description>
     </item>
     
     <item>
@@ -50,7 +46,9 @@ HARDWARE RISC-V instantiation At the instantiation, the following additional map
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/404_exercises/</guid>
-      <description>Exercise 401 Try to get the example to work.  Exercise 402 Determine how much time it takes for handling a single interrupt.  Exercise 403 Start from the example of the counter in [302](http://localhost:1313/hwswcodesign-course/300_soc/302_counter/). Have the peripheral trigger an interrupt when the count reaches **100&#39;000&#39;000**. Given that a clock cycle takes 10 ns. an interrupt should be triggered every (10 ns/CC x 100&#39;000&#39;000 CC) second. Meanwhile the processor is in an endless loop that prints something.</description>
+      <description>Exercise 401 Try to get the example to work.
+Exercise 402 Determine how much time it takes for handling a single interrupt.
+Exercise 403 Start from the example of the counter in 302. Have the peripheral trigger an interrupt when the count reaches 100&#39;000&#39;000. Given that a clock cycle takes 10 ns. an interrupt should be triggered every (10 ns/CC x 100&#39;000&#39;000 CC) second. Meanwhile the processor is in an endless loop that prints something.</description>
     </item>
     
   </channel>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <managingEditor>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</managingEditor>
-    <webMaster>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</webMaster>
-    
-	<atom:link href="https://kuleuven-diepenbeek.github.io/course_hwswcodesign/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <webMaster>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</webMaster><atom:link href="https://kuleuven-diepenbeek.github.io/course_hwswcodesign/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>101 - Processor</title>
       <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/101_processor/</link>
@@ -70,7 +66,8 @@ As there currently is no implementation for the memory, the testbench instantiat
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/106_exercises/</guid>
       <description>Below are a number of programming exercises. The aim is that you 1) prepare a working setup, and 2) that you refresh you low-level C programming skills. In the exercises where inputs are required, these inputs can be hardcoded as we have no means of inputting data to the processor.
-Exercise 101 For this exercise you should simply try to get the examples of this chapter to work.  create a Vivado project import the picorv32.</description>
+Exercise 101 For this exercise you should simply try to get the examples of this chapter to work.
+create a Vivado project import the picorv32.</description>
     </item>
     
     <item>
@@ -99,7 +96,7 @@ Multiplication coprocessor To illustrate (the use of) a coprocessor, let&amp;rsq
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/203_coproccesor_hd/</guid>
       <description>Coprocessor example As an example of a custom coprocessor a hardware component is made for calculating the Hamming distance.
-Control path The control path is made with a set-reset flipflop. The condition for setting is determined by the pcpi_valid signal and the instruction. Only if the opcode in pcpi_insn is 0110011 and the additional opcode field (funct7) is *0000001, this coprocessor is targeted.
+Control path The control path is made with a set-reset flipflop. The condition for setting is determined by the pcpi_valid signal and the instruction. Only if the opcode in pcpi_insn is 0110011 and the additional opcode field (funct7) is 0000001, this coprocessor is targeted.
 As long as the set-reset-flipflop is turned on, the coprocessor keeps on working.</description>
     </item>
     
@@ -109,7 +106,9 @@ As long as the set-reset-flipflop is turned on, the coprocessor keeps on working
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/200_coprocessor/204_exercises/</guid>
-      <description>Exercise 201 Try to get the example for the Hamming distance to work.   Make a comparison like the table in 202 where you compare your pure software implementation of the Hamming distance with the codesign.  Exercise 202 Transform the Hamming distance coprocessor to work on the div instruction in stead of the mul instruction.  Exercise 203 Make a new coprocessor that calculates the average of two integer numbers.</description>
+      <description>Exercise 201 Try to get the example for the Hamming distance to work. Make a comparison like the table in 202 where you compare your pure software implementation of the Hamming distance with the codesign.
+Exercise 202 Transform the Hamming distance coprocessor to work on the div instruction in stead of the mul instruction.
+Exercise 203 Make a new coprocessor that calculates the average of two integer numbers. If the result is non-integer, round it down.</description>
     </item>
     
     <item>
@@ -129,7 +128,7 @@ A number of standardised bus architectures exist, for example:</description>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/302_counter/</guid>
       <description>When a hardware/software codesign is made, we need to be able to measure the performance. A simple way to achieve this, is counting how many clock cycles certain operations take. Later on, this shall be revisited, but the peripheral will be useful (pinky swear).
- Having a arrived at your Master year, a counter is not exactly rocket science, nor brain surgery. The simple design that is shown, is a counter that either be incremented or cleared.</description>
+Having a arrived at your Master year, a counter is not exactly rocket science, nor brain surgery. The simple design that is shown, is a counter that either be incremented or cleared.</description>
     </item>
     
     <item>
@@ -139,7 +138,7 @@ A number of standardised bus architectures exist, for example:</description>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/303_soc/</guid>
       <description>A system on a chip or SoC stands in contrast to the traditional PC or laptop which are organised around a motherboard. In the third Bachelor of this program an entire course was spent on this topic: System-on-Chip design and experimentation. If you need a refresher, please head over to the website.
-The figure below shows an example of a SoC that we can build with what was seen before.</description>
+The figure below shows an example of a SoC that we can build with what was seen before. At the hearth of the system is the RISC-V processor (picorv32i).</description>
     </item>
     
     <item>
@@ -148,7 +147,9 @@ The figure below shows an example of a SoC that we can build with what was seen 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/300_soc/304_exercises/</guid>
-      <description>Exercise 301 Try to get the example for the counter-enforced SoC to work.  Exercise 302 Make a new (as in: don&#39;t modify the dummy) component that can calculated the Hamming distance of two values.   Make a comparison like the table in 202 where you compare your pure software implementation of the Hamming distance with the codesign.  Exercise 303 Make a new component that calculates the sine of a positive angle.</description>
+      <description>Exercise 301 Try to get the example for the counter-enforced SoC to work.
+Exercise 302 Make a new (as in: don&amp;rsquo;t modify the dummy) component that can calculated the Hamming distance of two values. Make a comparison like the table in 202 where you compare your pure software implementation of the Hamming distance with the codesign.
+Exercise 303 Make a new component that calculates the sine of a positive angle. The angle is provided as natural number (no decimals), in degrees and can be up to 10 bits.</description>
     </item>
     
     <item>
@@ -179,8 +180,8 @@ When a core wants to signal an interruption, it raises the signal. This is calle
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/403_example/</guid>
       <description>This page gives a hands-on example of using interrupts with the PicoRV32.
 HARDWARE RISC-V instantiation At the instantiation, the following additional mappings need to be made:
- ENABLE_IRQ &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_QREGS &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_TIMER &amp;hellip; to &amp;lsquo;1&amp;rsquo; MASKED_IRQ &amp;hellip; to x&amp;rdquo;00000000&amp;rdquo; LATCHED_IRQ &amp;hellip; to x&amp;rdquo;FFFFFFFF&amp;rdquo; PROGADDR_RESET &amp;hellip; to x&amp;rdquo;00000000&amp;rdquo; PROGADDR_IRQ &amp;hellip; to x&amp;rdquo;00000010&amp;rdquo;  These settings:
- enable the IRQ ensures the IRQs are not masked-out set the reset vector set the IRQ handler  Interrupts can be given through signal irq, and the ack&amp;rsquo;s come at the eoi signal.</description>
+ENABLE_IRQ &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_QREGS &amp;hellip; to &amp;lsquo;1&amp;rsquo; ENABLE_IRQ_TIMER &amp;hellip; to &amp;lsquo;1&amp;rsquo; MASKED_IRQ &amp;hellip; to x&amp;quot;00000000&amp;quot; LATCHED_IRQ &amp;hellip; to x&amp;quot;FFFFFFFF&amp;quot; PROGADDR_RESET &amp;hellip; to x&amp;quot;00000000&amp;quot; PROGADDR_IRQ &amp;hellip; to x&amp;quot;00000010&amp;quot; These settings:
+enable the IRQ ensures the IRQs are not masked-out set the reset vector set the IRQ handler Interrupts can be given through signal irq, and the ack&amp;rsquo;s come at the eoi signal.</description>
     </item>
     
     <item>
@@ -189,49 +190,59 @@ HARDWARE RISC-V instantiation At the instantiation, the following additional map
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/400_interrupt/404_exercises/</guid>
-      <description>Exercise 401 Try to get the example to work.  Exercise 402 Determine how much time it takes for handling a single interrupt.  Exercise 403 Start from the example of the counter in [302](http://localhost:1313/hwswcodesign-course/300_soc/302_counter/). Have the peripheral trigger an interrupt when the count reaches **100&#39;000&#39;000**. Given that a clock cycle takes 10 ns. an interrupt should be triggered every (10 ns/CC x 100&#39;000&#39;000 CC) second. Meanwhile the processor is in an endless loop that prints something.</description>
+      <description>Exercise 401 Try to get the example to work.
+Exercise 402 Determine how much time it takes for handling a single interrupt.
+Exercise 403 Start from the example of the counter in 302. Have the peripheral trigger an interrupt when the count reaches 100&#39;000&#39;000. Given that a clock cycle takes 10 ns. an interrupt should be triggered every (10 ns/CC x 100&#39;000&#39;000 CC) second. Meanwhile the processor is in an endless loop that prints something.</description>
     </item>
     
     <item>
-      <title>501 ASCON</title>
-      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/501_ascon/</link>
+      <title>501 Digital image</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/501_digital_image/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
-      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/501_ascon/</guid>
-      <description>ASCON is a cryptographic scheme. It was chosen as the winning candidate in NIST&amp;rsquo;s &amp;ldquo;Lightweight Cryptography&amp;rdquo;-competition. This announcement was made on February 7th, 2023.
-Candidates that were submitted to this competition needed to have these two functionalities: authenticated encryption and hashing. For the project in this course, you&amp;rsquo;ll be making a SW-only and a HW/SW implementation of the hashing functionality. The complete specifications for ASCON can be found here.</description>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/501_digital_image/</guid>
+      <description>Images are everywhere. When looking at digital images (as in: not for printing) every pixel of the image has pixelvalue. Typically, the light that is generated in a pixel is composed of red light, green light, and blue light, hence RGB. To make photos or movies, some device needs to capture the light. This is done in an image sensor. For the sake of completeness, it is mentioned that there two main types of sensors: CCD and CMOS.</description>
     </item>
     
     <item>
-      <title>502 Profiling</title>
-      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/502_profiling/</link>
+      <title>502 Image formats</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/502_image_formats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
-      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/502_profiling/</guid>
-      <description>In the first step of the project, a software implementation of ASCON hash is to be made. The prototype of the hash function should look like this:
-void ascon_hash(uint32_t * digest, uint32_t * message, uint8_t mlen);  the first argument contains a pointer to the reserved memory in which the digest will be saved; the second argument contains a pointer to the first memory address on which the message is saved; the third and final argument is an unsigned byte that gives the length of the message in number of 32-bit words.</description>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/502_image_formats/</guid>
+      <description>In general, to store a file on a computer, some form for file format is required. Examples of fileformats are: .pdf, .docx, and .html. A file format defines an encoding protocol on how to store the data.
+As just seen, storing images in full will require a lot of storage. Of course, there are file formats for images as well. The most well known image file formats (or image formats) are .</description>
     </item>
     
     <item>
-      <title>503 ASCON project</title>
-      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/503_project/</link>
+      <title>503 Example</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/503_example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
-      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_ascon/503_project/</guid>
-      <description>As it is an official holiday, there is no lesson on May first. However it will be the deadline for the first part of the project.
-The first part is a pure software implementation of ASCON hash. The functionality should be triggered upon this function:
-void ascon_hash(uint32_t * digest, uint32_t * message, uint8_t mlen);  The maximum value for length is 255. This means that the input can be 255 x 32 bits = 8160 bits which is 1020 bytes.</description>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/503_example/</guid>
+      <description>Here, an example is shown to help you understand how QOI (encoding) works. The data from the 8-by-8 sensor looks like shown below.
+Header The header is stictly defined:
+The first for bytes are the letters &amp;lsquo;q&amp;rsquo;, &amp;lsquo;o&amp;rsquo;, &amp;lsquo;i&amp;rsquo;, and &amp;lsquo;f&amp;rsquo;. These letters have to be UTF-8 encoded first, which results in 0x716F6966. The width of the image is stored as a 32-bit value: 0x00000008. The height of the image is stored as a 32-bit value: 0x00000008.</description>
     </item>
     
     <item>
-      <title>901 - Roger</title>
+      <title>504 Project</title>
+      <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/504_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
+      <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/500_qoi/504_project/</guid>
+      <description>The project within this course will have you designing an SOC that encodes sensor data to a QOI encoded image. As it would not be realistic to build the entire system, a number of compents will only be simulated:
+APB_mem_model: this is model for the memory containing the instructions and data APB_print_model: this is model for the SD-card storage. For the sake of simplicity, it is assumed that all writes to 0x8000000 will automatically be handled.</description>
+    </item>
+    
+    <item>
+      <title>901 - Roger &amp; Chip</title>
       <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/900_appendices/901_roger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/900_appendices/901_roger/</guid>
-      <description>Within the Engineering Technology program it is sometimes needed to have access to a server. For the purpose, Roger was born.
-This server is accessible over the Internet through SSH. You have received (or will receive) an email that contains your username and password.
-SSH-ing To connect to Roger, an SSH client should be used (e.g. putty). In case a GUI will be used, an Xserver should be run on your machine.</description>
+      <description>Within the Engineering Technology program it is sometimes needed to have access to a server. For this purpose, Roger was born. On this server several virtual machines are running. For this course, students can use chip.
+This server is accessible over the Internet. To be able to connect to the virtual machines a VPN connection is required. You have received (or will receive) an email that contains your username and password.</description>
     </item>
     
   </channel>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <managingEditor>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</managingEditor>
-    <webMaster>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</webMaster>
-    
-	<atom:link href="https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <webMaster>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</webMaster><atom:link href="https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>101 - Processor</title>
       <link>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/101_processor/</link>
@@ -70,7 +66,8 @@ As there currently is no implementation for the memory, the testbench instantiat
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/106_exercises/</guid>
       <description>Below are a number of programming exercises. The aim is that you 1) prepare a working setup, and 2) that you refresh you low-level C programming skills. In the exercises where inputs are required, these inputs can be hardcoded as we have no means of inputting data to the processor.
-Exercise 101 For this exercise you should simply try to get the examples of this chapter to work.  create a Vivado project import the picorv32.</description>
+Exercise 101 For this exercise you should simply try to get the examples of this chapter to work.
+create a Vivado project import the picorv32.</description>
     </item>
     
   </channel>
