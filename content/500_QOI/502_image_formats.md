@@ -1,7 +1,7 @@
 ---
 title: '502 Image formats'
 weight: 502
-draft: true
+draft: false
 ---
 
 In general, to store a *file* on a computer, some form for **file format** is required. Examples of fileformats are: .pdf, .docx, and .html. A file format defines an encoding protocol on how to store the data. 

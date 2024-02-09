@@ -1,7 +1,7 @@
 ---
 title: '501 Digital image'
 weight: 501
-draft: true
+draft: false
 ---
 
 Images are everywhere. When looking at digital images (as in: not for printing) every pixel of the image has pixelvalue. Typically, the light that is generated in a pixel is composed of <span style="color: red">red</span> light, <span style="color: green">green</span> light, and <span style="color: blue">blue</span> light, hence **RGB**. To make photos or movies, some device needs to *capture* the light. This is done in an image sensor. For the sake of completeness, it is mentioned that there two main types of sensors: CCD and CMOS.

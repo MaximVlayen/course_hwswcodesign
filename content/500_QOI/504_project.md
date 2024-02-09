@@ -1,7 +1,7 @@
 ---
 title: '504 Project'
 weight: 504
-draft: true
+draft: false
 ---
 
 The project within this course will have you designing an SOC that encodes sensor data to a QOI encoded image. As it would not be realistic to build the entire system, a number of compents will only be simulated: 

@@ -1,7 +1,7 @@
 ---
 title: '503 Example'
 weight: 503
-draft: true
+draft: false
 ---
 
 Here, an example is shown to help you understand how QOI (encoding) works. The data from the 8-by-8 sensor looks like shown below.
