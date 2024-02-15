@@ -5,6 +5,8 @@ weight: 106
 
 Below are a number of programming exercises. The aim is that you **1)** prepare a working setup, and **2)** that you refresh you low-level C programming skills. In the exercises where inputs are required, these **inputs can be hardcoded** as we have no means of inputting data to the processor.
 
+An example of the file structure can be seen [here](https://github.com/KULeuven-Diepenbeek/course_hwswcodesign/tree/master/src/100).
+
 #### Exercise 101
 {{% centeredColumn 50 %}}
 For this exercise you should simply try to get the examples of this chapter to work.
@@ -76,7 +78,7 @@ Determine how long it takes (in clock cycles) to perform the calculation !!
 #### Exercise 107
 
 {{% centeredColumn 50 %}}
-Write a firmware function <b>convert()</b> that converts temperature from Fahrenheit to degrees Celsius. The result may be rounded down.
+Write a firmware function <b>convert()</b> that converts temperature from Fahrenheit to degrees Celsius. <u>The result may be rounded down to approximate the conversion.</u>.
 
 Print the result to the output.
 {{< highlight C >}}

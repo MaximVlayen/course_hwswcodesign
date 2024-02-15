@@ -28,20 +28,10 @@ void print_dec(unsigned int val)
 	print_chr('\n');
 }
 
-// void print_dec(unsigned int val)
-// {
-// 	char buffer[10];
-// 	char *p = buffer;
-	
-// 	while (val || p == buffer) {
-// 		*(p++) = val % 10;
-// 		val = val / 10;
-// 	}
-// 	while (p != buffer) {
-// 		*((volatile unsigned int*)OUTPORT) = '0' + *(--p);
-// 	}
-// 	print_chr('\n');
-// }
+void print_dec(unsigned int val)
+{
+
+}
 
 void print_hex(unsigned int val, int digits)
 {

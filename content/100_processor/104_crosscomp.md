@@ -65,7 +65,7 @@ With these four functions, there is an opportunity to print a character, a strin
 *((volatile uint32_t*)OUTPORT) = ch;
 {{< /highlight >}}
 
-Let’s break this down for those whose C-skills are a bit rusty. The define **OUTPORT** makes sure that, everywhere in the code this *define* is substituted by the 32-bit number 0x10000000. This value is type-cast to an unsigned 32-bit pointer((volatile uint32_t*)). The keyword **volatile** states that the content of a variable can also be altered from another source. This is important !! Otherwise the optimisation of the C-compiler might optimise-out certain lines of C-code. Finally, that *address* is dereferenced to target *the memory that is located at address 0x10000000.
+Let’s break this down for those whose C-skills are a bit rusty. The define **OUTPORT** makes sure that, everywhere in the code this *define* is substituted by the 32-bit number 0x10000000. This value is type-cast to an unsigned 32-bit pointer((volatile uint32_t*)). The keyword **volatile** states that the content of a variable can also be altered from another source. This is important !! Otherwise the optimisation of the C-compiler might optimise-out certain lines of C-code. Finally, that *address* is dereferenced to target *the memory* that is located at address 0x10000000.
 
 
 
@@ -120,7 +120,7 @@ void print_hex(unsigned int val, int digits) {
 {{% /column %}}
 {{% /multiHcolumn %}}
 
-Typically, the one function that has to be present in every C-program is the main() function. This function is called by the OS to start of the program. As in bare metal programming there is no OS, some form of **booting-process** needs to be defined. The PicoRV32 comes with an example assembly filethat can be simplified to the script below.
+Typically, the one function that has to be present in every C-program is the main() function. This function is called by the OS to start of the program. As in bare metal programming there is no OS, some form of **booting-process** needs to be defined. The PicoRV32 comes with an example assembly file that can be simplified to the script below.
 
 {{% multiHcolumn %}}
 {{% column %}}
@@ -164,8 +164,8 @@ start:
   addi x31, zero, 0
 
   /* set stack pointer */
-  lui sp, %hi(16*1024)
-  addi sp, sp, %lo(16*1024)
+  lui sp, 4
+  addi sp, sp, 0
 
   /* call main */
   jal ra, main
@@ -188,9 +188,10 @@ SECTIONS {
 	}
 }
 {{< /highlight >}}
+
 This assembly code will be executed first because it is mapped first in the memory space through the linker script (**firmware.lds**). The assembly file defines there is a label *main* and then starts of with *start* label. 
 
-This **start** function sets all the registers of the processor to 0x0, it will load the **stack pointer register** to its maximum value. Then, the **main()** function is called. After the main function has finished, an **ebreak** command is execute which will have the PicoRV32 halt and raise the *trap* signal.
+This **start** function sets all the registers of the processor to 0x0. Next it will load the **stack pointer register** with 0x0000_4000. Then, the **main()** function is called. After the main function has finished, an **ebreak** command is execute which will have the PicoRV32 halt and raise the *trap* signal.
 
 ![build](/img/100/toolflow1.png)
 
@@ -409,7 +410,7 @@ Disassembly of section .memory:
 {{% /column %}}
 {{% column %}}
 ### ... to FPGA-compatible
-Next to 'decompiling' the binary .elf file to a human-readable representation, it can also be translated to a flat text format. This can be achieved with a Python script **makehex.py**.
+Next to 'decompiling' the binary .elf file to a human-readable representation, it can also be translated to a flat text format. This can be achieved with a Python script [makehex.py](https://github.com/KULeuven-Diepenbeek/course_hwswcodesign/blob/master/src/tools/makehex.py).
 
 An option to generate this hex dump is present in the Makefile and the result should look something like this.
 
