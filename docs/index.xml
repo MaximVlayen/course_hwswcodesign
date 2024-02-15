@@ -66,8 +66,8 @@ As there currently is no implementation for the memory, the testbench instantiat
       <author>&lt;i&gt;fname&lt;/i&gt;.&lt;i&gt;lname&lt;/i&gt;A T&lt;i&gt;kuleuven.be&lt;/i&gt; (Jo Vliegen)</author>
       <guid>https://kuleuven-diepenbeek.github.io/course_hwswcodesign/100_processor/106_exercises/</guid>
       <description>Below are a number of programming exercises. The aim is that you 1) prepare a working setup, and 2) that you refresh you low-level C programming skills. In the exercises where inputs are required, these inputs can be hardcoded as we have no means of inputting data to the processor.
-Exercise 101 For this exercise you should simply try to get the examples of this chapter to work.
-create a Vivado project import the picorv32.</description>
+An example of the file structure can be seen here.
+Exercise 101 For this exercise you should simply try to get the examples of this chapter to work.</description>
     </item>
     
     <item>

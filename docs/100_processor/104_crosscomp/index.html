@@ -12,22 +12,22 @@
     <title>104 - Cross compiling :: HW/SW codesign</title>
 
     
-    <link href="../../css/nucleus.css?1707478167" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1707478167" rel="stylesheet">
-    <link href="../../css/hybrid.css?1707478167" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1707478167" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1707478167" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1707478167" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1707478167" rel="stylesheet">
-    <link href="../../css/theme.css?1707478167" rel="stylesheet">
-    <link href="../../css/tabs.css?1707478167" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1707478167" rel="stylesheet">
+    <link href="../../css/nucleus.css?1708012616" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1708012616" rel="stylesheet">
+    <link href="../../css/hybrid.css?1708012616" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1708012616" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1708012616" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1708012616" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1708012616" rel="stylesheet">
+    <link href="../../css/theme.css?1708012616" rel="stylesheet">
+    <link href="../../css/tabs.css?1708012616" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1708012616" rel="stylesheet">
     
-    <link href="../../css/theme-kul.css?1707478167" rel="stylesheet">
+    <link href="../../css/theme-kul.css?1708012616" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1707478167"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1708012616"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -66,14 +66,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1707478167"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1707478167"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1708012616"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1708012616"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/kuleuven-diepenbeek.github.io\/course_hwswcodesign\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1707478167"></script>
+<script type="text/javascript" src="../../js/search.js?1708012616"></script>
 
     
   </div>
@@ -925,7 +925,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#endif</span></span></span></code></pre></div>
 <p>With these four functions, there is an opportunity to print a character, a string (as in a list of characters), a decimal value, or a hexadecimal value. A logical question would be: <strong>&ldquo;Where is my character (or other variable) printed ?&rdquo;</strong>. The answer lies in this line:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#f92672">*</span>((<span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">*</span>)OUTPORT) <span style="color:#f92672">=</span> ch;</span></span></code></pre></div>
-<p>Let’s break this down for those whose C-skills are a bit rusty. The define <strong>OUTPORT</strong> makes sure that, everywhere in the code this <em>define</em> is substituted by the 32-bit number 0x10000000. This value is type-cast to an unsigned 32-bit pointer((volatile uint32_t*)). The keyword <strong>volatile</strong> states that the content of a variable can also be altered from another source. This is important !! Otherwise the optimisation of the C-compiler might optimise-out certain lines of C-code. Finally, that <em>address</em> is dereferenced to target *the memory that is located at address 0x10000000.</p>
+<p>Let’s break this down for those whose C-skills are a bit rusty. The define <strong>OUTPORT</strong> makes sure that, everywhere in the code this <em>define</em> is substituted by the 32-bit number 0x10000000. This value is type-cast to an unsigned 32-bit pointer((volatile uint32_t*)). The keyword <strong>volatile</strong> states that the content of a variable can also be altered from another source. This is important !! Otherwise the optimisation of the C-compiler might optimise-out certain lines of C-code. Finally, that <em>address</em> is dereferenced to target <em>the memory</em> that is located at address 0x10000000.</p>
 </div>    
 <div class="column">
   <div class="code_caption">
@@ -971,7 +971,7 @@
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 </div>    
 </div>    
-<p>Typically, the one function that has to be present in every C-program is the main() function. This function is called by the OS to start of the program. As in bare metal programming there is no OS, some form of <strong>booting-process</strong> needs to be defined. The PicoRV32 comes with an example assembly filethat can be simplified to the script below.</p>
+<p>Typically, the one function that has to be present in every C-program is the main() function. This function is called by the OS to start of the program. As in bare metal programming there is no OS, some form of <strong>booting-process</strong> needs to be defined. The PicoRV32 comes with an example assembly file that can be simplified to the script below.</p>
 <div class="multiHcolumn">
 <div class="column">
   <div class="code_caption">
@@ -1015,8 +1015,8 @@
 </span></span><span style="display:flex;"><span>  addi x31, zero, <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">/*</span> set stack pointer <span style="color:#f92672">*/</span>
-</span></span><span style="display:flex;"><span>  lui sp, <span style="color:#f92672">%hi(16*1024)
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672">  addi sp, sp, %</span><span style="color:#a6e22e">lo</span>(<span style="color:#ae81ff">16</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>)
+</span></span><span style="display:flex;"><span>  lui sp, <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  addi sp, sp, <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">/*</span> call main <span style="color:#f92672">*/</span>
 </span></span><span style="display:flex;"><span>  jal ra, main
@@ -1038,8 +1038,8 @@
 </span></span><span style="display:flex;"><span>		end <span style="color:#f92672">=</span> .;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-This assembly code will be executed first because it is mapped first in the memory space through the linker script (**firmware.lds**). The assembly file defines there is a label *main* and then starts of with *start* label. 
-<p>This <strong>start</strong> function sets all the registers of the processor to 0x0, it will load the <strong>stack pointer register</strong> to its maximum value. Then, the <strong>main()</strong> function is called. After the main function has finished, an <strong>ebreak</strong> command is execute which will have the PicoRV32 halt and raise the <em>trap</em> signal.</p>
+<p>This assembly code will be executed first because it is mapped first in the memory space through the linker script (<strong>firmware.lds</strong>). The assembly file defines there is a label <em>main</em> and then starts of with <em>start</em> label.</p>
+<p>This <strong>start</strong> function sets all the registers of the processor to 0x0. Next it will load the <strong>stack pointer register</strong> with 0x0000_4000. Then, the <strong>main()</strong> function is called. After the main function has finished, an <strong>ebreak</strong> command is execute which will have the PicoRV32 halt and raise the <em>trap</em> signal.</p>
 <p><img src="../../img/100/toolflow1.png" alt="build"></p>
 </div>    
 </div>    
@@ -1246,7 +1246,7 @@ This assembly code will be executed first because it is mapped first in the memo
 </div>    
 <div class="column">
   <h3 id="-to-fpga-compatible">&hellip; to FPGA-compatible</h3>
-<p>Next to &lsquo;decompiling&rsquo; the binary .elf file to a human-readable representation, it can also be translated to a flat text format. This can be achieved with a Python script <strong>makehex.py</strong>.</p>
+<p>Next to &lsquo;decompiling&rsquo; the binary .elf file to a human-readable representation, it can also be translated to a flat text format. This can be achieved with a Python script <a href="https://github.com/KULeuven-Diepenbeek/course_hwswcodesign/blob/master/src/tools/makehex.py">makehex.py</a>.</p>
 <p>An option to generate this hex dump is present in the Makefile and the result should look something like this.</p>
 <div class="code_caption">
     firmware.hex
@@ -1942,19 +1942,19 @@ This assembly code will be executed first because it is mapped first in the memo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1707478167"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1707478167"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1707478167"></script>
-    <script src="../../js/jquery.sticky.js?1707478167"></script>
-    <script src="../../js/featherlight.min.js?1707478167"></script>
-    <script src="../../js/highlight.pack.js?1707478167"></script>
+    <script src="../../js/clipboard.min.js?1708012616"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1708012616"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1708012616"></script>
+    <script src="../../js/jquery.sticky.js?1708012616"></script>
+    <script src="../../js/featherlight.min.js?1708012616"></script>
+    <script src="../../js/highlight.pack.js?1708012616"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1707478167"></script>
-    <script src="../../js/learn.js?1707478167"></script>
-    <script src="../../js/hugo-learn.js?1707478167"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1708012616"></script>
+    <script src="../../js/learn.js?1708012616"></script>
+    <script src="../../js/hugo-learn.js?1708012616"></script>
     
         
-            <script src="../../mermaid/mermaid.js?1707478167"></script>
+            <script src="../../mermaid/mermaid.js?1708012616"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
