@@ -28,10 +28,6 @@ void print_dec(unsigned int val)
 	print_chr('\n');
 }
 
-void print_dec(unsigned int val)
-{
-
-}
 
 void print_hex(unsigned int val, int digits)
 {
