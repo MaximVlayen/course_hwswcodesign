@@ -32,7 +32,7 @@ Make a new component that calculates the sine of a positive angle. The angle is 
 <br/><br/>Some examples:
 <img src="/img/300/sinetable.png"/>
 
-<center><b>PROTIP:</b> work <u>smart</u>, not <u>hard</u> !!</center>
+<!-- <center><b>PROTIP:</b> work <u>smart</u>, not <u>hard</u> !!</center> -->
 
 {{% /centeredColumn %}}
 
