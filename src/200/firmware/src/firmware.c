@@ -17,4 +17,17 @@ void main(void) {
 	print_str(") = 0x");
 	print_hex(hd, 2);
 	print_str(".");
+
+	value1 = 10;
+	value2 = 21;
+
+    hd = hwswcd_hd(value1, value2);
+
+	print_str("HD(0x");
+	print_hex(value1, 2);
+	print_str(", ");
+	print_hex(value2, 2);
+	print_str(") = 0x");
+	print_hex(hd, 2);
+	print_str(".");
 }
