@@ -3,6 +3,8 @@
 #
 #   date: January 15th 2024
 #   author: VlJo
+#   edited: February 29th 2024
+#   editor: VlMa
 ################################################################################
 # Script to generate a Vivado project for HW/SW codesign (100)
 #
@@ -10,8 +12,8 @@
 
 # set parameters
 set pname "hwswcodesign_200"
-set srcpath "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/200"
-set projpath "/home/jvliegen/sandbox/course_hwswcodesign"
+set srcpath "~/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200"
+set projpath "~/Documents/HWSW-codesign/sandbox"
 set part "xc7z020clg400-1"
 set board "tul.com.tw:pynq-z2:part0:1.0"
 

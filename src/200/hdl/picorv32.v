@@ -72,8 +72,8 @@ module picorv32 #(
 	parameter [ 0:0] COMPRESSED_ISA = 0,
 	parameter [ 0:0] CATCH_MISALIGN = 1,
 	parameter [ 0:0] CATCH_ILLINSN = 1,
-	parameter [ 0:0] ENABLE_PCPI = 0,
-	parameter [ 0:0] ENABLE_MUL = 0,
+	parameter [ 0:0] ENABLE_PCPI = 0,              
+	parameter [ 0:0] ENABLE_MUL = 0,               
 	parameter [ 0:0] ENABLE_FAST_MUL = 0,
 	parameter [ 0:0] ENABLE_DIV = 0,
 	parameter [ 0:0] ENABLE_IRQ = 0,
@@ -283,7 +283,7 @@ module picorv32 #(
 			.pcpi_ready(pcpi_mul_ready )
 		);
 	end else if (ENABLE_MUL) begin
-		picorv32_pcpi_mul pcpi_mul (
+		picorv32_pcpi_mul pcpi_mul (              
 			.clk       (clk            ),
 			.resetn    (resetn         ),
 			.pcpi_valid(pcpi_valid     ),

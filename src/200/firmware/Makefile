@@ -29,7 +29,7 @@ BINARY = firmware.elf
 RM = rm -rf
 MKDIR = mkdir
 
-ARCHITECTURE = rv32i$(subst C,c,$(COMPRESSED_ISA))
+ARCHITECTURE = rv32im$(subst C,c,$(COMPRESSED_ISA))
 
 .PHONY: all clean sizes setup
 

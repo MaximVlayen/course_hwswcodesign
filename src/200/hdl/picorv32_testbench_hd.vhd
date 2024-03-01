@@ -70,8 +70,8 @@ architecture Behavioural of picorv32_testbench_hd is
             COMPRESSED_ISA : STD_LOGIC := '0';
             CATCH_MISALIGN : STD_LOGIC := '1';
             CATCH_ILLINSN : STD_LOGIC := '1';
-            ENABLE_PCPI : STD_LOGIC := '0';
-            ENABLE_MUL : STD_LOGIC := '0';
+            ENABLE_PCPI : STD_LOGIC := '0';                             
+            ENABLE_MUL : STD_LOGIC := '0';                             
             ENABLE_FAST_MUL : STD_LOGIC := '0';
             ENABLE_DIV : STD_LOGIC := '0';
             ENABLE_IRQ : STD_LOGIC := '0';
@@ -191,8 +191,8 @@ begin
             COMPRESSED_ISA => '0',
             CATCH_MISALIGN => '1',
             CATCH_ILLINSN => '1',
-            ENABLE_PCPI => '1',
-            ENABLE_MUL => '1',
+            ENABLE_PCPI => '1',             -- send signal to picoRV-processor to turn coprocessor on
+            ENABLE_MUL => '1',              -- send signal to picoRV-processor to recognize mul instruction
             ENABLE_FAST_MUL => '0',
             ENABLE_DIV => '0',
             ENABLE_IRQ => '0',
@@ -242,8 +242,8 @@ begin
     picorv32_mem_model_inst00: component picorv32_mem_model 
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
-            FNAME_HEX => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/hwswcodedign-course/src/200/firmware/firmware.hex",
-            FNAME_OUT => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/hwswcodedign-course/src/200/firmware/simulation_output.dat"
+            FNAME_HEX => "~/Documents/HWSW-codesign/Exercises/200/firmware/firmware.hex",
+            FNAME_OUT => "~/Documents/HWSW-codesign/Exercises/200/firmware/simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
@@ -255,7 +255,7 @@ begin
             mem_ready => mem_ready_i,
             mem_rdata => mem_rdata_i
         );
-
+    
     -------------------------------------------------------------------------------
     -- CLOCK
     -------------------------------------------------------------------------------
