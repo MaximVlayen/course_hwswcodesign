@@ -159,7 +159,7 @@ begin
     end process;
 
     -------------------------------------------------------------------------------
-    -- COPROCESSOR - mul
+    -- COPROCESSOR - div        -- previously "COPROCESSOR - mul"
     -------------------------------------------------------------------------------
     pcpi_hwswcd_hd_inst00: component pcpi_hwswcd_hd port map(
         clk => clock_i,
@@ -192,9 +192,9 @@ begin
             CATCH_MISALIGN => '1',
             CATCH_ILLINSN => '1',
             ENABLE_PCPI => '1',             -- send signal to picoRV-processor to turn coprocessor on
-            ENABLE_MUL => '1',              -- send signal to picoRV-processor to recognize mul instruction
+            ENABLE_MUL => '0',              -- send signal to picoRV-processor to recognize mul instruction
             ENABLE_FAST_MUL => '0',
-            ENABLE_DIV => '0',
+            ENABLE_DIV => '1',              -- send signal to picoRV-processor to recognize div instruction
             ENABLE_IRQ => '0',
             ENABLE_IRQ_QREGS => '1',
             ENABLE_IRQ_TIMER => '1',
@@ -242,8 +242,8 @@ begin
     picorv32_mem_model_inst00: component picorv32_mem_model 
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
-            FNAME_HEX => "~/Documents/HWSW-codesign/Exercises/200/firmware/firmware.hex",
-            FNAME_OUT => "~/Documents/HWSW-codesign/Exercises/200/firmware/simulation_output.dat"
+            FNAME_HEX => "C:/Users/Maxim/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200/firmware/firmware.hex_file",
+            FNAME_OUT => "C:/Users/Maxim/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200/hdl/tb/simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,

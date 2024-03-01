@@ -23,7 +23,7 @@ void main(void) {
 
     hd = hwswcd_hd(value1, value2);
 
-	print_str("HD(0x");
+	print_str("en HD(0x");
 	print_hex(value1, 2);
 	print_str(", ");
 	print_hex(value2, 2);

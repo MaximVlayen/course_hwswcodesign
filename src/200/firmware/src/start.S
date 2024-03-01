@@ -47,5 +47,5 @@ start:
   ebreak
 
 hwswcd_hd:
-  mul a0, a0, a1
+  div a0, a0, a1
   ret
