@@ -93,7 +93,7 @@ begin
     -- COMBINATORIAL
     -------------------------------------------------------------------------------
     isArith <= '1' when pcpi_insn_i(6 downto 0) = "0110011" else '0';
-    isMul <= '1' when pcpi_insn_i(31 downto 25) = "0000001" else '0';
+    isMul <= '1' when (pcpi_insn_i(31 downto 25) = "0000001" and pcpi_insn_i(14 downto 12) = "000") else '0';
     isValid <= pcpi_valid_i and isArith and isMul and not (finished);
 
     pcpi_wait_i <= '0';

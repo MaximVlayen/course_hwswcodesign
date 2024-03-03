@@ -43,7 +43,7 @@ architecture Behavioural of pcpi_hwswcd_hd is
     signal pcpi_wait_i : STD_LOGIC;
     signal pcpi_ready_i : STD_LOGIC;
 
-    signal isArith, isMul, distance_ce, finished : STD_LOGIC;
+    signal isArith, isDiv, distance_ce, finished : STD_LOGIC;
     signal calculating, calculating_set, calculating_reset : STD_LOGIC;
     signal distance, distance_inc : STD_LOGIC_VECTOR(31 downto 0);
     signal pointer : STD_LOGIC_VECTOR(31 downto 0);
@@ -70,11 +70,11 @@ begin
     -- COMBINATORIAL
     -------------------------------------------------------------------------------
     isArith <= '1' when pcpi_insn_i(6 downto 0) = "0110011" else '0';
-    isMul <= '1' when pcpi_insn_i(31 downto 25) = "0000001" else '0';
+    isDiv <= '1' when (pcpi_insn_i(31 downto 25) = "0000001" and pcpi_insn_i(14 downto 12) = "100") else '0';
     distance_ce <= (operand_x(0) xor operand_y(0)) and calculating;
     distance_inc <= std_logic_vector(to_unsigned(to_integer(unsigned(distance)) + 1, distance_inc'length));
 
-    calculating_set <= pcpi_valid_i and not(calculating) and isArith and isMul and not(finished);
+    calculating_set <= pcpi_valid_i and not(calculating) and isArith and isDiv and not(finished);
     calculating_reset <= pointer(0) and not pointer(1) and calculating;
 
     pcpi_wait_i <= calculating;
