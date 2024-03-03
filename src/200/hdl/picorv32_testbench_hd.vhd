@@ -55,6 +55,21 @@ architecture Behavioural of picorv32_testbench_hd is
             pcpi_ready : OUT STD_LOGIC
         );
     end component;
+    
+    component hwswcd_average is
+        port (
+            resetn : IN STD_LOGIC;
+            clk : IN STD_LOGIC;
+            pcpi_valid : IN STD_LOGIC;
+            pcpi_insn : IN STD_LOGIC_VECTOR(32-1 downto 0);
+            pcpi_rs1 : IN STD_LOGIC_VECTOR(32-1 downto 0);
+            pcpi_rs2 : IN STD_LOGIC_VECTOR(32-1 downto 0);
+            pcpi_wr : OUT STD_LOGIC;
+            pcpi_rd : OUT STD_LOGIC_VECTOR(32-1 downto 0);
+            pcpi_wait : OUT STD_LOGIC;
+            pcpi_ready : OUT STD_LOGIC
+        );
+    end component;
 
     component picorv32 is
         generic(
@@ -173,7 +188,22 @@ begin
         pcpi_wait => pcpi_wait_i,
         pcpi_ready => pcpi_ready_i
     );
-
+    
+    -------------------------------------------------------------------------------
+    -- COPROCESSOR - mul
+    -------------------------------------------------------------------------------
+    hwswcd_average_inst00: component hwswcd_average port map(
+        clk => clock_i,
+        resetn => resetn_i,
+        pcpi_valid => pcpi_valid_i, 
+        pcpi_insn => pcpi_insn_i, 
+        pcpi_rs1 => pcpi_rs1_i, 
+        pcpi_rs2 => pcpi_rs2_i, 
+        pcpi_wr => pcpi_wr_i,
+        pcpi_rd => pcpi_rd_i,
+        pcpi_wait => pcpi_wait_i,
+        pcpi_ready => pcpi_ready_i
+    );
     -------------------------------------------------------------------------------
     -- RISC-V - PicoRV32
     -------------------------------------------------------------------------------
@@ -192,7 +222,7 @@ begin
             CATCH_MISALIGN => '1',
             CATCH_ILLINSN => '1',
             ENABLE_PCPI => '1',             -- send signal to picoRV-processor to turn coprocessor on
-            ENABLE_MUL => '0',              -- send signal to picoRV-processor to recognize mul instruction
+            ENABLE_MUL => '1',              -- send signal to picoRV-processor to recognize mul instruction
             ENABLE_FAST_MUL => '0',
             ENABLE_DIV => '1',              -- send signal to picoRV-processor to recognize div instruction
             ENABLE_IRQ => '0',
