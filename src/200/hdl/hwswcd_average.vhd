@@ -71,6 +71,8 @@ architecture Behavioural of hwswcd_average is
     signal pcpi_ready_i : STD_LOGIC;
 
     signal isArith, isMul, isValid, finished, carry_out : STD_LOGIC;
+    signal calculating, calculating_set, calculating_reset : STD_LOGIC;
+    signal pointer : std_logic_vector(31 downto 0);
     signal operand_x, operand_y, sum, average : STD_LOGIC_VECTOR(31 downto 0);
     
 begin
@@ -92,12 +94,15 @@ begin
     -------------------------------------------------------------------------------
     -- COMBINATORIAL
     -------------------------------------------------------------------------------
-    isArith <= '1' when pcpi_insn_i(6 downto 0) = "0110011" else '0';
-    isMul <= '1' when (pcpi_insn_i(31 downto 25) = "0000001" and pcpi_insn_i(14 downto 12) = "000") else '0';
-    isValid <= pcpi_valid_i and isArith and isMul and not (finished);
+    isArith <= '1' when pcpi_insn_i(6 downto 0) = "0110011" else '0';                                           -- check if correct opcode
+    isMul <= '1' when (pcpi_insn_i(31 downto 25) = "0000001" and pcpi_insn_i(14 downto 12) = "000") else '0';   -- check if correct funct7 and funct3 
+    -- isValid <= pcpi_valid_i and isArith and isMul and not (finished);
+    
+    calculating_set <= pcpi_valid_i and not(calculating) and isArith and isMul and not(finished);
+    calculating_reset <= pointer(0) and not pointer(1) and calculating;
 
-    pcpi_wait_i <= '0';
-    pcpi_wr_i <= finished;
+    pcpi_wait_i <= calculating;
+    pcpi_wr_i <= finished;          -- pcpi_wr en pcpi_ready worden nooit hoog in de sim?
     pcpi_rd_i <= average;
     pcpi_ready_i <= finished;
     
@@ -109,26 +114,55 @@ begin
             S_vector => sum,
             carry_out => carry_out
         );
-        
-    average(30 downto 0) <= sum(31 downto 1);   -- divide sum by 2 (shift right)
-    average(31) <= carry_out;                   -- include carry to get final average
-
+    
     -------------------------------------------------------------------------------
     -- SEQUENTIAL
     -------------------------------------------------------------------------------
     PREG: process(resetn_i, clock_i)
     begin
-        if resetn_i = '0' then                  -- reset is actief laag
+        if resetn_i = '0' then
             operand_x <= (others => '0');
             operand_y <= (others => '0');
+            pointer <= (others => '1');
+            average <= (others => '0');
+            calculating <= '0';
             finished <= '0';
         elsif rising_edge(clock_i) then 
-            if isValid = '1' then 
+            if calculating_set = '1' then 
                 operand_x <= pcpi_rs1_i;
                 operand_y <= pcpi_rs2_i;
+                pointer <= (others => '1');
+                average <= (others => '0');
+            elsif calculating = '1' then 
+                pointer <= '0' & pointer(pointer'high downto 1);
+                average(30 downto 0) <= sum(31 downto 1);   -- divide sum by 2 (shift right)
+                average(31) <= carry_out;                   -- include carry to get final average
             end if;
-            finished <= '1';
-       end if;
+            if calculating_reset = '1' then 
+                calculating <= '0';
+            elsif calculating_set = '1' then 
+                calculating <= '1';
+            end if;
+            finished <= calculating_reset;
+        end if;
     end process;
+    
+----------------------------
+   -- Vorige code 
+----------------------------    
+--    PREG: process(resetn_i, clock_i)
+--    begin
+--        if resetn_i = '0' then                  -- reset is actief laag
+--            operand_x <= (others => '0');
+--            operand_y <= (others => '0');
+--            finished <= '0';
+--        elsif rising_edge(clock_i) then 
+--            if isValid = '1' then 
+--                operand_x <= pcpi_rs1_i;
+--                operand_y <= pcpi_rs2_i;
+--            end if;
+--            finished <= '1';
+--       end if;
+--    end process;
 
 end Behavioural;
