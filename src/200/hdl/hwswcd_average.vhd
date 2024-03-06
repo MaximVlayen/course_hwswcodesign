@@ -146,22 +146,5 @@ begin
         end if;
     end process;
     
-----------------------------
-   -- Vorige code 
-----------------------------    
---    PREG: process(resetn_i, clock_i)
---    begin
---        if resetn_i = '0' then                  -- reset is actief laag
---            operand_x <= (others => '0');
---            operand_y <= (others => '0');
---            finished <= '0';
---        elsif rising_edge(clock_i) then 
---            if isValid = '1' then 
---                operand_x <= pcpi_rs1_i;
---                operand_y <= pcpi_rs2_i;
---            end if;
---            finished <= '1';
---       end if;
---    end process;
 
 end Behavioural;

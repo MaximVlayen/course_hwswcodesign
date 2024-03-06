@@ -1,6 +1,6 @@
 #include "print.h"
 
-//extern unsigned int hwswcd_hd(unsigned int value1, unsigned int value2);
+extern unsigned int hwswcd_hd(unsigned int value1, unsigned int value2);
 extern unsigned int hwswcd_avg(unsigned int value3, unsigned int value4);
 
 void main(void) {
@@ -9,7 +9,7 @@ void main(void) {
 	value1 = 5;
 	value2 = 9;
 
-//    hd = hwswcd_hd(value1, value2);
+    hd = hwswcd_hd(value1, value2);
 
 	// hd(0x05,09) = 0x02
 	print_str("hd(0x");
@@ -17,13 +17,13 @@ void main(void) {
 	print_str(", ");
 	print_hex(value2, 2);
 	print_str(") = 0x");
-//	print_hex(hd, 2);
+	print_hex(hd, 2);
 	print_str(" en ");
 
 	value1 = 10;
 	value2 = 21;
 
-//    hd = hwswcd_hd(value1, value2); 
+    hd = hwswcd_hd(value1, value2); 
 
 	// hd(0x0A,15) = 0x05 
 	print_str("hd(0x");
@@ -31,7 +31,7 @@ void main(void) {
 	print_str(", ");
 	print_hex(value2, 2);
 	print_str(") = 0x");
-//	print_hex(hd, 2);
+	print_hex(hd, 2);
 	print_str(" en ");
 
 	value3 = 5;
