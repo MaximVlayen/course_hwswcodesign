@@ -101,7 +101,7 @@ begin
     calculating_reset <= pointer(0) and not pointer(1) and calculating;
 
     pcpi_wait_i <= calculating;
-    pcpi_wr_i <= finished;          -- pcpi_wr en pcpi_ready worden nooit hoog in de sim?
+    pcpi_wr_i <= finished;          
     pcpi_rd_i <= average;
     pcpi_ready_i <= finished;
     

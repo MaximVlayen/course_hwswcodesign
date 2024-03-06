@@ -176,24 +176,7 @@ begin
     -------------------------------------------------------------------------------
     -- COPROCESSOR - div        -- previously "COPROCESSOR - mul"
     -------------------------------------------------------------------------------
-    pcpi_hwswcd_hd_inst00: component pcpi_hwswcd_hd 
-        port map(
-            clk => clock_i,
-            resetn => resetn_i,
-            pcpi_valid => pcpi_valid_i, 
-            pcpi_insn => pcpi_insn_i, 
-            pcpi_rs1 => pcpi_rs1_i, 
-            pcpi_rs2 => pcpi_rs2_i, 
-            pcpi_wr => pcpi_wr_i,
-            pcpi_rd => pcpi_rd_i,
-            pcpi_wait => pcpi_wait_i,
-            pcpi_ready => pcpi_ready_i
-        );
-    
-    -------------------------------------------------------------------------------
-    -- COPROCESSOR - mul
-    -------------------------------------------------------------------------------
---    hwswcd_average_inst00: component hwswcd_average 
+--    pcpi_hwswcd_hd_inst00: component pcpi_hwswcd_hd 
 --        port map(
 --            clk => clock_i,
 --            resetn => resetn_i,
@@ -206,6 +189,23 @@ begin
 --            pcpi_wait => pcpi_wait_i,
 --            pcpi_ready => pcpi_ready_i
 --        );
+    
+    -------------------------------------------------------------------------------
+    -- COPROCESSOR - mul
+    -------------------------------------------------------------------------------
+    hwswcd_average_inst00: component hwswcd_average 
+        port map(
+            clk => clock_i,
+            resetn => resetn_i,
+            pcpi_valid => pcpi_valid_i, 
+            pcpi_insn => pcpi_insn_i, 
+            pcpi_rs1 => pcpi_rs1_i, 
+            pcpi_rs2 => pcpi_rs2_i, 
+            pcpi_wr => pcpi_wr_i,
+            pcpi_rd => pcpi_rd_i,
+            pcpi_wait => pcpi_wait_i,
+            pcpi_ready => pcpi_ready_i
+        );
     
     -------------------------------------------------------------------------------
     -- RISC-V - PicoRV32
@@ -225,9 +225,9 @@ begin
             CATCH_MISALIGN => '1',
             CATCH_ILLINSN => '1',
             ENABLE_PCPI => '1',             -- send signal to picoRV-processor to turn coprocessor on
-            ENABLE_MUL => '0',              -- send signal to picoRV-processor to recognize mul instruction
+            ENABLE_MUL => '1',              -- send signal to picoRV-processor to recognize mul instruction
             ENABLE_FAST_MUL => '0',
-            ENABLE_DIV => '1',              -- send signal to picoRV-processor to recognize div instruction
+            ENABLE_DIV => '0',              -- send signal to picoRV-processor to recognize div instruction
             ENABLE_IRQ => '0',
             ENABLE_IRQ_QREGS => '1',
             ENABLE_IRQ_TIMER => '1',

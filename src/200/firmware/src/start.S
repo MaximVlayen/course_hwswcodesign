@@ -1,6 +1,6 @@
   .section .init
   .global main
-  .global hwswcd_hd
+  .global hwswcd_avg
 
 
 start:
@@ -47,7 +47,7 @@ start:
   /* break - trap */
   ebreak
 
-hwswcd_hd:
-  div a0, a0, a1
-  ret
 
+hwswcd_avg:
+  mul a0, a0, a1
+  ret
