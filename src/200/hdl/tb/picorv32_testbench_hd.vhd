@@ -273,7 +273,7 @@ begin
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
             FNAME_HEX => "C:/Users/Maxim/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200/firmware/firmware.hex_file",
-            FNAME_OUT => "C:/Users/Maxim/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200/hdl/tb/simulation_output.dat"
+            FNAME_OUT => "C:/Users/Maxim/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200/simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,

@@ -72,7 +72,7 @@ begin
     isArith <= '1' when pcpi_insn_i(6 downto 0) = "0110011" else '0';
     isDiv <= '1' when (pcpi_insn_i(31 downto 25) = "0000001" and pcpi_insn_i(14 downto 12) = "100") else '0';
     distance_ce <= (operand_x(0) xor operand_y(0)) and calculating;
-    distance_inc <= std_logic_vector(to_unsigned(to_integer(unsigned(distance)) + 1, distance_inc'length));
+    distance_inc <= std_logic_vector(to_unsigned(to_integer(unsigned(distance)) + 1, distance_inc'length)); -- distance_inc = distance + 1
 
     calculating_set <= pcpi_valid_i and not(calculating) and isArith and isDiv and not(finished);
     calculating_reset <= pointer(0) and not pointer(1) and calculating;
@@ -106,7 +106,7 @@ begin
                 operand_y <= '0' & operand_y(operand_y'high downto 1);
                 pointer <= '0' & pointer(pointer'high downto 1);
                 if distance_ce = '1' then 
-                    distance <= distance_inc;
+                    distance <= distance_inc; -- distance = distance + 1
                 end if;
             end if;
             if calculating_reset = '1' then 

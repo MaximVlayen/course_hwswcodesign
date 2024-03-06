@@ -72,7 +72,7 @@ architecture Behavioural of hwswcd_average is
 
     signal isArith, isMul, isValid, finished, carry_out : STD_LOGIC;
     signal calculating, calculating_set, calculating_reset : STD_LOGIC;
-    signal pointer : std_logic_vector(31 downto 0);
+    signal pointer : STD_LOGIC_VECTOR(31 downto 0);
     signal operand_x, operand_y, sum, average : STD_LOGIC_VECTOR(31 downto 0);
     
 begin
@@ -96,7 +96,6 @@ begin
     -------------------------------------------------------------------------------
     isArith <= '1' when pcpi_insn_i(6 downto 0) = "0110011" else '0';                                           -- check if correct opcode
     isMul <= '1' when (pcpi_insn_i(31 downto 25) = "0000001" and pcpi_insn_i(14 downto 12) = "000") else '0';   -- check if correct funct7 and funct3 
-    -- isValid <= pcpi_valid_i and isArith and isMul and not (finished);
     
     calculating_set <= pcpi_valid_i and not(calculating) and isArith and isMul and not(finished);
     calculating_reset <= pointer(0) and not pointer(1) and calculating;
