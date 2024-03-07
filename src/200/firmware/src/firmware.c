@@ -1,7 +1,7 @@
 #include "print.h"
 
 //extern unsigned int hwswcd_hd(unsigned int value1, unsigned int value2);
-extern unsigned int hwswcd_avg(unsigned int value3, unsigned int value4);
+//extern unsigned int hwswcd_avg(unsigned int value3, unsigned int value4);
 
 void main(void) {
 	volatile unsigned int value1, value2, hd, value3, value4, avg;
@@ -37,7 +37,8 @@ void main(void) {
 	value3 = 5;
 	value4 = 10;
 
-    avg = hwswcd_avg(value3, value4);
+//    avg = hwswcd_avg(value3, value4);
+	avg = ((value3)+(value4))/2;
 
 	// avg(0x05,0A) = 0x07
 	print_str("avg(0x");

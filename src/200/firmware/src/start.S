@@ -1,6 +1,5 @@
   .section .init
   .global main
-  .global hwswcd_avg
 
 
 start:
@@ -48,6 +47,3 @@ start:
   ebreak
 
 
-hwswcd_avg:
-  mul a0, a0, a1
-  ret
