@@ -1,0 +1,17 @@
+---------------------------------------
+ HWSWCD EXERCISE 203: COMPARISON TABLE
+---------------------------------------
+
+ 				| software-only	|    hwswcd	|
+--------------------------------|---------------|---------------|
+filesize of .elf file (bytes)	|		|		|
+--------------------------------|---------------|---------------|
+duration of program (CC)      	|		|		|
+--------------------------------|---------------|---------------|
+required LUTs			|		|		|
+--------------------------------|---------------|---------------|
+required registers		|		|		|
+--------------------------------|---------------|---------------|
+
+note that the hwswcd version also prints the extra strings that were used
+to show the hamming distance, hence the filesize and duration are longer.
