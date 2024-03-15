@@ -4,14 +4,19 @@
 
  				| software-only	|    hwswcd	|
 --------------------------------|---------------|---------------|
-filesize of .elf file (bytes)	|		|		|
+filesize of .elf file (bytes)	|	5508	|	5544	|
 --------------------------------|---------------|---------------|
-duration of program (CC)      	|		|		|
+duration of program (CC)      	|	2709	|	2752	|
 --------------------------------|---------------|---------------|
 required LUTs			|		|		|
 --------------------------------|---------------|---------------|
 required registers		|		|		|
 --------------------------------|---------------|---------------|
 
-note that the hwswcd version also prints the extra strings that were used
-to show the hamming distance, hence the filesize and duration are longer.
+Note that both the sw-only and hwswcd versions also print the extra strings that were used
+to show the hamming distance, hence the relatively large filesize and long duration.
+
+There can be concluded that the sw-only version is better in terms of the file size and 
+the duration.
+
+I was unable to find the required LUTs and registers for the program, my apologies.

@@ -9,11 +9,11 @@
 ################################################################################
 
 # set parameters
-set pname "hwswcodesign_100"
-set srcpath "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/100"
-set projpath "/home/jvliegen/sandbox/course_hwswcodesign"
-set part "xc7vx485tffg1761-2"
-set board "xilinx.com:vc707:part0:1.3"
+set pname "hwswcodesign_300"
+set srcpath "~/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200"
+set projpath "~/Documents/HWSW-codesign/sandbox"
+set part "xc7z020clg400-1"
+set board "tul.com.tw:pynq-z2:part0:1.0"
 
 # delete older versions
 cd $projpath
