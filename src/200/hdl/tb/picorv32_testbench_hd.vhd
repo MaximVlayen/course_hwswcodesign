@@ -275,8 +275,13 @@ begin
     picorv32_mem_model_inst00: component picorv32_mem_model 
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
+<<<<<<< HEAD:src/200/hdl/tb/picorv32_testbench_hd.vhd
             FNAME_HEX => "C:/Users/Maxim/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200/firmware/firmware.hex_file",
             FNAME_OUT => "C:/Users/Maxim/Documents/HWSW-codesign/course_hwswcodesign_repo_mv/src/200/simulation_output.dat"
+=======
+            FNAME_HEX => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/200/firmware/firmware.hex",
+            FNAME_OUT => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/200/firmware/simulation_output.dat"
+>>>>>>> f7f1bb3fd5ad090c3ac85969cc8c47e742e26ac1:src/200/hdl/picorv32_testbench_hd.vhd
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
